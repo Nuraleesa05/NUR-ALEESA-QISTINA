@@ -117,6 +117,42 @@
         margin-bottom: 15px;
         object-fit: cover;
     }
+   /* Song Box Styling */
+.song-box {
+    background: #f7f9ff;
+    border: 2px solid #003366;
+    padding: 20px;
+    margin: 18px auto;
+    border-radius: 18px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.song-box h3 {
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+/* Floating Music Notes */
+.music-note {
+    position: absolute;
+    font-size: 2rem;
+    animation: floatUp 6s linear infinite;
+    opacity: 0.9;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(40px) scale(1); opacity: 0.9; }
+    50% { transform: translateY(-30px) scale(1.2); opacity: 1; }
+    100% { transform: translateY(-100px) scale(0.8); opacity: 0; }
+}
+
+/* Note positions */
+.note1 { left: 20%; animation-delay: 0s; }
+.note2 { left: 50%; animation-delay: 1.8s; }
+.note3 { left: 75%; animation-delay: 3.2s; }
+
 </style>
 </head>
 
@@ -154,15 +190,45 @@
         <button onclick="showPage(3)">Next ➡️</button>
     </section>
 
-    <!-- PAGE 3 -->
-    <section class="page" id="page3">
-        <h1>💼 Skills</h1>
-        <p>✔️ Cataloguing & Metadata</p>
-        <p>✔️ Microsoft Office</p>
-        <p>✔️ Teamwork & Leadership</p>
-        <button onclick="showPage(2)">⬅️ Back</button>
-        <button onclick="showPage(4)">Next ➡️</button>
-    </section>
+    <!-- PAGE 3 (HOBBY + MP3 + ANIMATION) -->
+<section class="page" id="page3">
+    <h1>🎧 Hobby</h1>
+    <p>I enjoy listening to music while studying or during my free time.  
+       Below are 3 of my favourite songs that I usually listen to. 🎶</p>
+
+    <!-- SONG 1 -->
+    <div class="song-box">
+        <h3>🎵 Song 1: (Change Song Name)</h3>
+        <audio controls>
+            <source src="lagu1.mp3" type="audio/mp3">
+        </audio>
+    </div>
+
+    <!-- SONG 2 -->
+    <div class="song-box">
+        <h3>🎵 Song 2: (Change Song Name)</h3>
+        <audio controls>
+            <source src="lagu2.mp3" type="audio/mp3">
+        </audio>
+    </div>
+
+    <!-- SONG 3 -->
+    <div class="song-box">
+        <h3>🎵 Song 3: (Change Song Name)</h3>
+        <audio controls>
+            <source src="lagu3.mp3" type="audio/mp3">
+        </audio>
+    </div>
+
+    <!-- MOVING OBJECT (Floating Music Notes) -->
+    <div class="music-note note1">🎶</div>
+    <div class="music-note note2">🎵</div>
+    <div class="music-note note3">✨</div>
+
+    <button onclick="showPage(2)">⬅️ Back</button>
+    <button onclick="showPage(4)">Next ➡️</button>
+</section>
+
 
     <!-- PAGE 4 -->
     <section class="page" id="page4">
@@ -202,5 +268,6 @@ function showPage(num) {
 
 </body>
 </html>
+
 
 
