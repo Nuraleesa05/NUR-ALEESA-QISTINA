@@ -268,6 +268,32 @@ img {
 </style>
 </head>
 
+    <body>
+    <!-- Button scroll -->
+    <div class="scroll-buttons">
+        <button id="scrollUp">▲</button>
+        <button id="scrollDown">▼</button>
+    </div>
+
+    <!-- Pages content -->
+    <div class="container">...</div>
+
+    <!-- Script JavaScript -->
+    <script>
+        // Show page function awak sedia ada
+        function showPage(num) { ... }
+
+        // Scroll button function
+        document.getElementById('scrollUp').addEventListener('click', function() {
+            window.scrollBy({ top: -300, behavior: 'smooth' });
+        });
+
+        document.getElementById('scrollDown').addEventListener('click', function() {
+            window.scrollBy({ top: 300, behavior: 'smooth' });
+        });
+    </script>
+</body>
+
 <body>
 
     <!-- Scroll Buttons -->
@@ -412,6 +438,7 @@ function showPage(num) {
 
 </body>
 </html>
+
 
 
 
