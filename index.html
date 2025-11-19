@@ -33,7 +33,36 @@
         100% {background-position: 0% 50%;}
     }
 
-    /* Container: white box for all pages */
+    /* NAVIGATION MENU BAR */
+    .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.85);
+        padding: 12px 0;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        backdrop-filter: blur(5px);
+        z-index: 1000;
+    }
+
+    .navbar a {
+        margin: 0 15px;
+        color: #003366;
+        font-weight: 600;
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 20px;
+        transition: 0.3s;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+        background: #003366;
+        color: white;
+    }
+
+    /* Main white container */
     .container {
         background: #ffffff;
         width: 85%;
@@ -45,63 +74,33 @@
         position: relative;
         overflow: hidden;
         border: 1px solid #e0e0e0;
+        margin-top: 70px; /* prevent overlap with navbar */
     }
 
-    /* Align styles for all pages */
-    .page h1 {
-        font-size: 2em;
-        font-weight: 700;
-        color: #003366; /* dark blue */
-        margin-bottom: 10px;
+    .page {
+        display: none;
+        animation: fadeSlide 0.8s ease;
     }
 
-    .page h2 {
-        font-size: 1.3em;
-        color: #000000; /* black */
-        margin-bottom: 12px;
-        font-weight: 500;
+    .active-page {
+        display: block;
     }
 
-    .page p {
-        font-size: 1em;
-        line-height: 1.5;
-        color: #000000; /* black */
-        margin-bottom: 12px;
+    @keyframes fadeSlide {
+        from {opacity: 0; transform: translateY(20px);}
+        to {opacity: 1; transform: translateY(0);}
     }
 
-    .page p b {
-        color: #003366; /* bold highlight */
-    }
-
-    img {
-        width: 160px;
-        height: 160px;
-        border-radius: 50%;
-        border: 5px solid #f2c94c;
-        margin-bottom: 15px;
-        animation: float 4s ease-in-out infinite;
-        object-fit: cover;
-    }
-
-    @keyframes float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
-    }
-
-    .buttons {
-        margin-top: 25px;
-    }
-
+    /* Buttons */
     button {
         background: #003366;
         color: white;
         border: none;
         padding: 10px 30px;
         border-radius: 25px;
-        font-size: 0.95em;
         cursor: pointer;
-        margin: 0 10px;
-        transition: all 0.3s ease;
+        margin: 10px;
+        transition: .3s;
     }
 
     button:hover {
@@ -110,175 +109,96 @@
         transform: scale(1.05);
     }
 
-    .page {
-        display: none;
-        animation: fadeSlide 0.8s ease;
-    }
-
-    .active {
-        display: block;
-    }
-
-    @keyframes fadeSlide {
-        from {opacity: 0; transform: translateY(30px);}
-        to {opacity: 1; transform: translateY(0);}
-    }
-
-    footer {
-        margin-top: 20px;
-        color: #555;
-        font-size: 0.85em;
-    }
-
-    /* Floating circles */
-    .circle {
-        position: absolute;
+    img {
+        width: 160px;
+        height: 160px;
         border-radius: 50%;
-        background: rgba(255, 255, 255, 0.3);
-        animation: floatUp 12s linear infinite;
-        z-index: 0;
+        border: 5px solid #f2c94c;
+        margin-bottom: 15px;
+        object-fit: cover;
     }
-
-    @keyframes floatUp {
-        0% { transform: translateY(100vh) scale(0); opacity: 1; }
-        100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
-    }
-
-    .circle:nth-child(1) {width: 80px; height: 80px; left: 10%; animation-delay: 0s;}
-    .circle:nth-child(2) {width: 100px; height: 100px; left: 70%; animation-delay: 2s;}
-    .circle:nth-child(3) {width: 60px; height: 60px; left: 40%; animation-delay: 4s;}
-    .circle:nth-child(4) {width: 120px; height: 120px; left: 85%; animation-delay: 6s;}
-    .circle:nth-child(5) {width: 50px; height: 50px; left: 25%; animation-delay: 8s;}
-
-    /* SOCIAL MEDIA ICON */
-    .social-media {
-        margin-top: 10px;
-        display: flex;
-        justify-content: center;
-        gap: 12px;
-    }
-
-    .social-media img {
-        width: 40px;
-        height: 40px;
-        border-radius: 6px;
-        padding: 4px;
-        background: #ffffffd9;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-        transition: 0.25s ease;
-    }
-
-    .social-media img:hover {
-        transform: scale(1.25);
-    }
-
 </style>
 </head>
 
 <body>
-    <!-- Floating circles -->
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
 
-    <div class="container">
-        <!-- Page 1 -->
-        <section class="page active" id="page1">
-            <img src="me1.jpg" alt="Nur Aleesa Qistina">
-            <h1>Hello, I’m Nur Aleesa Qistina 👋</h1>
-            <p><b>Student ID:</b> 2023875766</p>
-            <p>I am pursuing a <b>Diploma in Information Management</b> at <b>UiTM Kedah</b>.  
-            I’m passionate about data management, systems, and digital records.  
-            I love combining technology and information to create efficient knowledge systems for the future.</p>
+<!-- NAVBAR MENU -->
+<div class="navbar">
+    <a href="#" onclick="showPage(1)" id="nav1" class="active">Home</a>
+    <a href="#" onclick="showPage(2)" id="nav2">Education</a>
+    <a href="#" onclick="showPage(3)" id="nav3">Skills</a>
+    <a href="#" onclick="showPage(4)" id="nav4">Experience</a>
+    <a href="#" onclick="showPage(5)" id="nav5">Contact</a>
+</div>
 
-            <!-- SOCIAL MEDIA ICON -->
-            <div class="social-media">
-                <a href="https://www.instagram.com/nuraleesa4?igsh=dGF6YWF3YjJtY3Rk&utm_source=qr/nuraleesa4" target="_blank">
-                    <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram">
-                </a>
-                <a href="https://www.tiktok.com/@zmbqan4?_r=1&_t=ZS-91PRo5Bn5ta/@YOUR_TIKTOK" target="_blank">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok">
-                </a>
-            </div>
 
-            <div class="buttons">
-                <button onclick="nextPage(2)">Next ➡️</button>
-            </div>
-        </section>
+<div class="container">
 
-        <!-- Page 2 -->
-        <section class="page" id="page2">
-<img src="spm.jpg" alt="spm">
-            <h1>🎓 Education</h1>
-            <p><b>SK Pagar Museh</b> (2012 – 2017)</p>
-            <p><b>SMK Sungai Karangan</b> (2018 – 2022)</p>
-            <p><b>UiTM Kedah</b> – Diploma in Information Management (2023 – 2026, Expected Graduated)</p>
-            <p>My academic background has built a strong foundation in information handling, cataloguing and database systems.  
-            I enjoy discovering how data and information can be managed effectively to support digital transformation.</p>
-            <div class="buttons">
-                <button onclick="prevPage(1)">⬅️ Back</button>
-                <button onclick="nextPage(3)">Next ➡️</button>
-            </div>
-        </section>
+    <!-- PAGE 1 -->
+    <section class="page active-page" id="page1">
+        <img src="me1.jpg">
+        <h1>Hello, I’m Nur Aleesa Qistina 👋</h1>
+        <p><b>Student ID:</b> 2023875766</p>
+        <p>I am pursuing a <b>Diploma in Information Management</b> at UiTM Kedah.</p>
 
-        <!-- Page 3 -->
-        <section class="page" id="page3">
-            <h1>💼 Hobby</h1>
-            <p>✔️ Information & Data Management</p>
-            <p>✔️ Cataloguing & Metadata Creation</p>
-            <p>✔️ Microsoft Office & Database Tools</p>
-            <p>✔️ Communication & Teamwork</p>
-            <p>✔️ Adaptability, Creativity, Leadership</p>
-            <div class="buttons">
-                <button onclick="prevPage(2)">⬅️ Back</button>
-                <button onclick="nextPage(4)">Next ➡️</button>
-            </div>
-        </section>
+        <button onclick="showPage(2)">Next ➡️</button>
+    </section>
 
-        <!-- Page 4 -->
-        <section class="page" id="page4">
-            <h1>🌟 Experience & Achievements</h1>
-            <p>• Contributed to UiTM Kedah’s library management projects.</p>
-            <p>• Developed digital record systems as part of coursework.</p>
-            <p>• Active participant in group projects on metadata and cataloguing.</p>
-            <p>• Recognized for leadership and full attendance in academic activities.</p>
-            <div class="buttons">
-                <button onclick="prevPage(3)">⬅️ Back</button>
-                <button onclick="nextPage(5)">Next ➡️</button>
-            </div>
-        </section>
+    <!-- PAGE 2 -->
+    <section class="page" id="page2">
+        <h1>🎓 Education</h1>
+        <p><b>SK Pagar Museh</b> (2012–2017)</p>
+        <p><b>SMK Sungai Karangan</b> (2018–2022)</p>
+        <p><b>UiTM Kedah</b> – Diploma in Information Management (2023–2026, Expected Graduation)</p>
+        <button onclick="showPage(1)">⬅️ Back</button>
+        <button onclick="showPage(3)">Next ➡️</button>
+    </section>
 
-        <!-- Page 5 -->
-        <section class="page" id="page5">
-            <h1>📞 Contact Me</h1>
-            <p><b>Email:</b> aleesa30102005@gmail.com</p>
-            <p><b>Phone:</b> 010-2652908</p>
-            <p><b>Address:</b> Kuala Ketil, Kedah, Malaysia</p>
-            <p>Thank you for visiting my digital resume!  
-            I’m open to learning opportunities and collaborations in the field of information management.</p>
-            <div class="buttons">
-                <button onclick="prevPage(4)">⬅️ Back</button>
-                <button onclick="nextPage(1)">🏠 Home</button>
-            </div>
-            <footer>© 2025 Nur Aleesa Qistina Binti Mohd Zuber | Designed by Aleesa 💙</footer>
-        </section>
-    </div>
+    <!-- PAGE 3 -->
+    <section class="page" id="page3">
+        <h1>💼 Skills</h1>
+        <p>✔️ Cataloguing & Metadata</p>
+        <p>✔️ Microsoft Office</p>
+        <p>✔️ Teamwork & Leadership</p>
+        <button onclick="showPage(2)">⬅️ Back</button>
+        <button onclick="showPage(4)">Next ➡️</button>
+    </section>
+
+    <!-- PAGE 4 -->
+    <section class="page" id="page4">
+        <h1>🌟 Experience</h1>
+        <p>• Library management projects</p>
+        <p>• Digital records systems</p>
+        <p>• Metadata group projects</p>
+        <button onclick="showPage(3)">⬅️ Back</button>
+        <button onclick="showPage(5)">Next ➡️</button>
+    </section>
+
+    <!-- PAGE 5 -->
+    <section class="page" id="page5">
+        <h1>📞 Contact Me</h1>
+        <p><b>Email:</b> aleesa30102005@gmail.com</p>
+        <p><b>Phone:</b> 010-2652908</p>
+        <p><b>Address:</b> Kuala Ketil, Kedah</p>
+        <button onclick="showPage(4)">⬅️ Back</button>
+        <button onclick="showPage(1)">🏠 Home</button>
+    </section>
+
+</div>
 
 <script>
-    function nextPage(num) {
-        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-        document.getElementById('page' + num).classList.add('active');
-    }
+function showPage(num) {
+    // Hide all pages
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active-page'));
 
-    function prevPage(num) {
-        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-        document.getElementById('page' + num).classList.add('active');
-    }
+    // Show selected page
+    document.getElementById("page" + num).classList.add("active-page");
+
+    // Update navbar active link
+    document.querySelectorAll('.navbar a').forEach(a => a.classList.remove('active'));
+    document.getElementById("nav" + num).classList.add("active");
+}
 </script>
+
 </body>
-</html> 
-
-
-
+</html>
