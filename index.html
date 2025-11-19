@@ -62,19 +62,28 @@
         color: white;
     }
 
-    /* Main white container */
-    .container {
-        background: #ffffff;
-        width: 100%;
-        max-width: 1200px;
-        padding: 60px;
-        border-radius: 25px;
-        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-        border: 1px solid #e0e0e0;
-        margin-top: 70px; /* prevent overlap with navbar */
+    /* Main white container with glowing effect */
+.container {
+    background: white;
+    width: 100%;
+    max-width: 1200px;
+    padding: 60px;
+    border-radius: 25px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+    margin-top: 70px;
+    
+    /* Glow animation */
+    animation: yellowGlow 3s ease-in-out infinite;
+}
+
+@keyframes yellowGlow {
+    0% { box-shadow: 0 0 15px 2px rgba(255, 220, 0, 0.5); }
+    50% { box-shadow: 0 0 35px 12px rgba(255, 220, 0, 1); }
+    100% { box-shadow: 0 0 15px 2px rgba(255, 220, 0, 0.5); }
+   
     }
 
     .page {
@@ -162,9 +171,10 @@
 <div class="navbar">
     <a href="#" onclick="showPage(1)" id="nav1" class="active">Home</a>
     <a href="#" onclick="showPage(2)" id="nav2">Education</a>
-    <a href="#" onclick="showPage(3)" id="nav3">Skills</a>
+    <a href="#" onclick="showPage(3)" id="nav3">Hobby</a>
     <a href="#" onclick="showPage(4)" id="nav4">Experience</a>
     <a href="#" onclick="showPage(5)" id="nav5">Contact</a>
+   <a href="#" onclick="showPage(5)" id="nav5">Memory</a>
 </div>
 
 
@@ -194,7 +204,7 @@
 <section class="page" id="page3">
     <h1>🎧 Hobby</h1>
     <p>I enjoy listening to music while studying or during my free time.  
-       Below are 3 of my favourite songs that I usually listen to. 🎶</p>
+       Below are 2 of my favourite songs that I usually listen to. 🎶</p>
 
     <!-- SONG 1 -->
     <div class="song-box">
@@ -209,14 +219,6 @@
         <h3>🎵 Song 2: (Change Song Name)</h3>
         <audio controls>
             <source src="lagu2.mp3" type="audio/mp3">
-        </audio>
-    </div>
-
-    <!-- SONG 3 -->
-    <div class="song-box">
-        <h3>🎵 Song 3: (Change Song Name)</h3>
-        <audio controls>
-            <source src="lagu3.mp3" type="audio/mp3">
         </audio>
     </div>
 
@@ -250,6 +252,10 @@
         <button onclick="showPage(1)">🏠 Home</button>
     </section>
 
+     <!-- PAGE 6 -->
+    <section class="page" id="page4">
+        <h1>🌟 Memory</h1>
+
 </div>
 
 <script>
@@ -268,6 +274,7 @@ function showPage(num) {
 
 </body>
 </html>
+
 
 
 
