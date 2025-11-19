@@ -260,6 +260,37 @@ img {
         gap: 15px;   /* kurang jarak */
     }
 
+    /* Container untuk Memory page */
+#page6 .memory-flex {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+/* Item gambar dan caption */
+.memory-item {
+    flex: 1 1 180px; /* responsive: min 180px per item */
+    text-align: center;
+}
+
+.memory-item img {
+    width: 180px;   /* saiz gambar */
+    height: 180px;
+    border-radius: 15px;
+    object-fit: cover;
+    border: 3px solid #003366;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    margin-bottom: 8px;
+}
+
+.memory-item p {
+    font-size: 0.9rem;
+    color: #003366;
+    font-weight: 500;
+}
+
 /* Scroll Buttons CSS */
 .scroll-buttons {
     position: fixed;
@@ -475,13 +506,28 @@ img {
 <!-- PAGE 6: Memory -->
 <section class="page" id="page6">
     <h1>🌟 Memory</h1>
-    <p><b>Email:</b> aleesa30102005@gmail.com</p>
-    <p><b>Phone:</b> 010-2652908</p>
-    <p><b>Address:</b> Kuala Ketil, Kedah</p>
-    <button onclick="showPage(5)">⬅️ Back</button>
-    <button onclick="showPage(1)">🏠 Home</button>
-</section>
-
+    
+    <div class="memory-flex">
+    <div class="memory-item">
+        <img src="family.jpg" alt="Memory 1">
+        <p>Caption 1</p>
+    </div>
+    <div class="memory-item">
+        <img src="siblings.jpg" alt="Memory 2">
+        <p>Caption 2</p>
+    </div>
+    <div class="memory-item">
+        <img src="anugerahkoko.jpg" alt="Memory 3">
+        <p>Caption 3</p>
+    </div>
+    <div class="memory-item">
+        <img src="skpm.jpg" alt="Memory 4">
+        <p>Caption 4</p>
+    </div>
+    <div class="memory-item">
+        <img src="favorito.jpg" alt="Memory 5">
+        <p>Caption 5</p>
+    </div>
 </div>
 
 <script>
@@ -503,3 +549,4 @@ document.getElementById('scrollDown').addEventListener('click', function() {
 
 </body>
 </html>
+
