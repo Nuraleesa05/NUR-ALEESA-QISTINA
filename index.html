@@ -189,6 +189,15 @@ img {
 .note1 { left: 20%; animation-delay: 0s; }
 .note2 { left: 50%; animation-delay: 1.8s; }
 .note3 { left: 75%; animation-delay: 3.2s; }
+    /* More floating notes positions */
+.note4 { left: 10%; animation-delay: 0.5s; }
+.note5 { left: 30%; animation-delay: 1.2s; }
+.note6 { left: 45%; animation-delay: 2s; }
+.note7 { left: 60%; animation-delay: 2.8s; }
+.note8 { left: 70%; animation-delay: 3.5s; }
+.note9 { left: 85%; animation-delay: 4.2s; }
+.note10 { left: 95%; animation-delay: 1.7s; }
+
 
 /* Flex container for Home page */
 .home-flex {
@@ -201,13 +210,15 @@ img {
 }
 
 /* Image box */
+.home-video {
+    display: flex;
+    justify-content: center;
+}
+
 .home-video img {
-    width: 600px;          
-    max-width: 50%;    
-    height: auto;         
+    width: 600px;     /* tukar besar mana awak nak */
     border-radius: 20px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-
 }
 
 /* Text box */
@@ -249,7 +260,8 @@ img {
         <div class="home-flex">
             <!-- Left: Video Box -->
            <div class="home-video">
-    <img src="aleesahomepage.jpg" alt="Intro Image" style="width:100%; border-radius:20px; box-shadow:0 10px 25px rgba(0,0,0,0.2);">
+   <img src="aleesahomepage.jpg" alt="Intro Image">
+
 </div>
 
             <!-- Right: Text Box -->
@@ -304,6 +316,18 @@ img {
         <div class="music-note note1">🎶</div>
         <div class="music-note note2">🎵</div>
         <div class="music-note note3">✨</div>
+        <div class="music-note note1">🎶</div>
+<div class="music-note note2">🎵</div>
+<div class="music-note note3">✨</div>
+
+<div class="music-note note4">🎶</div>
+<div class="music-note note5">🎵</div>
+<div class="music-note note6">🎶</div>
+<div class="music-note note7">🎵</div>
+<div class="music-note note8">🎶</div>
+<div class="music-note note9">✨</div>
+<div class="music-note note10">🎵</div>
+
 
         <button onclick="showPage(2)">⬅️ Back</button>
         <button onclick="showPage(4)">Next ➡️</button>
@@ -357,6 +381,7 @@ function showPage(num) {
 
 </body>
 </html>
+
 
 
 
