@@ -227,6 +227,25 @@ img {
     color: #000;
     margin-bottom: 12px;
 }
+    .contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 20px 0;
+}
+
+.contact-icons img {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.contact-icons img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
 
 /* Scroll Buttons CSS */
 .scroll-buttons {
@@ -418,12 +437,28 @@ img {
 <!-- PAGE 5: Contact -->
 <section class="page" id="page5">
     <h1>📞 Contact Me</h1>
-    <p><b>Email:</b> aleesa30102005@gmail.com</p>
-    <p><b>Phone:</b> 010-2652908</p>
-    <p><b>Address:</b> Kuala Ketil, Kedah</p>
+    <p><b>Email:</b> <a href="mailto:aleesa30102005@gmail.com">aleesa30102005@gmail.com</a></p>
+
+    <!-- Social Media Icons -->
+    <div class="contact-icons">
+        <a href="https://www.instagram.com/nuraleesa" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+        </a>
+        <a href="https://www.facebook.com/aleesa_qistina" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+        </a>
+        <a href="https://wa.me/601012652908" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+        </a>
+        <a href="mailto:aleesa30102005@gmail.com">
+            <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email">
+        </a>
+    </div>
+
     <button onclick="showPage(4)">⬅️ Back</button>
-    <button onclick="showPage(1)">Next ➡️</button>
+    <button onclick="showPage(1)">🏠 Home</button>
 </section>
+
 
 <!-- PAGE 6: Memory -->
 <section class="page" id="page6">
@@ -456,6 +491,7 @@ document.getElementById('scrollDown').addEventListener('click', function() {
 
 </body>
 </html>
+
 
 
 
