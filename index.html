@@ -318,53 +318,15 @@ img {
     background: #00d4ff;
     transform: scale(1.1);
 }
-    /* =========================
-   Page 2: Education Styling
-   ========================= */
-
-#page2 {
-    max-width: 1000px;         /* container lebih kecil */
-    padding: 40px;             /* padding lebih kemas */
-    margin: 80px auto;         /* center page */
-    border-radius: 25px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-}
-
-#page2 h1 {
-    text-align: center;
-    color: #003366;
-    margin-bottom: 40px;
-}
-
-#page2 .education-flex {
-    display: flex;
-    justify-content: center;   /* gambar center */
-    flex-wrap: wrap;           /* responsive */
-    gap: 30px;
-}
-
-#page2 .edu-item {
-    flex: 1 1 250px;
-    text-align: center;
-}
-
+    
+/* Khusus untuk Education page (page2) */
 #page2 .edu-item img {
-    width: 100%;
-    max-width: 280px;          /* kawal size gambar */
-    border-radius: 15px;
+    width: 300px;        /* atau ikut saiz awak */
+    height: auto;         /* kekalkan nisbah asal */
+    border-radius: 15px;  /* bulat sikit, bukan perfect circle */
     border: 3px solid #003366;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    margin-bottom: 12px;
     object-fit: cover;
 }
-
-#page2 .edu-item p {
-    font-size: 1rem;
-    color: #003366;
-    font-weight: 500;
-    margin-top: 5px;
-}
-
 
 </style>
 </head>
@@ -468,10 +430,7 @@ img {
             <img src="emcee.jpg" alt="Experience 3">
             <p>I conducted a workshop that organized by the RSY Club UITM Kedah</p>
         </div>
-        <div class="exp-item">
-            <img src="kursuskahwin.jpg" alt="Experience 4">
-            <p>I took a marriage course in Sungai Petani</p>
-        </div>
+        
     </div>
 
     <button onclick="showPage(3)">⬅️ Back</button>
@@ -549,4 +508,5 @@ document.getElementById('scrollDown').addEventListener('click', function() {
 
 </body>
 </html>
+
 
