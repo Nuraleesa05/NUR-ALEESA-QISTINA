@@ -20,11 +20,9 @@ body {
     background: linear-gradient(135deg, #003366, #0073e6, #f2c94c);
     background-size: 400% 400%;
     animation: bgMove 12s ease infinite;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    min-height: 100vh;  /* gunakan min-height, bukan height */
+    display: block;     /* jangan flex, biar standard block */
+    overflow-x: hidden; /* kalau nak elak horizontal scroll */
 }
 
 @keyframes bgMove {
@@ -362,6 +360,7 @@ function showPage(num) {
 
 </body>
 </html>
+
 
 
 
