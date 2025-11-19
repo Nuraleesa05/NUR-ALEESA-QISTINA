@@ -227,25 +227,38 @@ img {
     color: #000;
     margin-bottom: 12px;
 }
-    .contact-icons {
+   /* Container untuk ikon */
+.contact-icons {
     display: flex;
     justify-content: center;
-    gap: 25px;
+    gap: 20px;  /* jarak antara ikon */
     margin: 20px 0;
 }
 
+/* Gaya ikon */
 .contact-icons img {
-    width: 50px;
-    height: 50px;
+    width: 70px;   /* saiz default untuk desktop */
+    height: 70px;
     border-radius: 10px;
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
 }
 
+/* Hover effect */
 .contact-icons img:hover {
     transform: scale(1.2);
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
+
+/* Responsive untuk skrin kecil */
+@media screen and (max-width: 600px) {
+    .contact-icons img {
+        width: 50px;   /* saiz lebih kecil untuk fon */
+        height: 50px;
+    }
+    .contact-icons {
+        gap: 15px;   /* kurang jarak */
+    }
 
 /* Scroll Buttons CSS */
 .scroll-buttons {
@@ -437,7 +450,6 @@ img {
 <!-- PAGE 5: Contact -->
 <section class="page" id="page5">
     <h1>📞 Contact Me</h1>
-    <p><b>Email:</b> <a href="mailto:aleesa30102005@gmail.com">aleesa30102005@gmail.com</a></p>
 
     <!-- Social Media Icons -->
     <div class="contact-icons">
@@ -456,7 +468,7 @@ img {
     </div>
 
     <button onclick="showPage(4)">⬅️ Back</button>
-    <button onclick="showPage(1)">🏠 Home</button>
+    <button onclick="showPage(6)">">Next ➡️</button>
 </section>
 
 
@@ -491,6 +503,7 @@ document.getElementById('scrollDown').addEventListener('click', function() {
 
 </body>
 </html>
+
 
 
 
