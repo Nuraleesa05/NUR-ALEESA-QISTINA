@@ -9,60 +9,60 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Poppins', sans-serif;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-    body {
-        background: linear-gradient(135deg, #003366, #0073e6, #f2c94c);
-        background-size: 400% 400%;
-        animation: bgMove 12s ease infinite;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-    }
+body {
+    background: linear-gradient(135deg, #003366, #0073e6, #f2c94c);
+    background-size: 400% 400%;
+    animation: bgMove 12s ease infinite;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
 
-    @keyframes bgMove {
-        0% {background-position: 0% 50%;}
-        50% {background-position: 100% 50%;}
-        100% {background-position: 0% 50%;}
-    }
+@keyframes bgMove {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
 
-    /* NAVIGATION MENU BAR */
-    .navbar {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.85);
-        padding: 12px 0;
-        text-align: center;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        backdrop-filter: blur(5px);
-        z-index: 1000;
-    }
+/* NAVIGATION MENU BAR */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 12px 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+}
 
-    .navbar a {
-        margin: 0 15px;
-        color: #003366;
-        font-weight: 600;
-        text-decoration: none;
-        padding: 8px 16px;
-        border-radius: 20px;
-        transition: 0.3s;
-    }
+.navbar a {
+    margin: 0 15px;
+    color: #003366;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
 
-    .navbar a:hover,
-    .navbar a.active {
-        background: #003366;
-        color: white;
-    }
+.navbar a:hover,
+.navbar a.active {
+    background: #003366;
+    color: white;
+}
 
-    /* Main white container with glowing effect */
+/* Main white container with glowing effect */
 .container {
     background: white;
     width: 100%;
@@ -83,50 +83,50 @@
     0% { box-shadow: 0 0 15px 2px rgba(255, 220, 0, 0.5); }
     50% { box-shadow: 0 0 35px 12px rgba(255, 220, 0, 1); }
     100% { box-shadow: 0 0 15px 2px rgba(255, 220, 0, 0.5); }
-   
-    }
+}
 
-    .page {
-        display: none;
-        animation: fadeSlide 0.8s ease;
-    }
+.page {
+    display: none;
+    animation: fadeSlide 0.8s ease;
+}
 
-    .active-page {
-        display: block;
-    }
+.active-page {
+    display: block;
+}
 
-    @keyframes fadeSlide {
-        from {opacity: 0; transform: translateY(20px);}
-        to {opacity: 1; transform: translateY(0);}
-    }
+@keyframes fadeSlide {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
 
-    /* Buttons */
-    button {
-        background: #003366;
-        color: white;
-        border: none;
-        padding: 10px 30px;
-        border-radius: 25px;
-        cursor: pointer;
-        margin: 10px;
-        transition: .3s;
-    }
+/* Buttons */
+button {
+    background: #003366;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin: 10px;
+    transition: .3s;
+}
 
-    button:hover {
-        background: #f2c94c;
-        color: #003366;
-        transform: scale(1.05);
-    }
+button:hover {
+    background: #f2c94c;
+    color: #003366;
+    transform: scale(1.05);
+}
 
-    img {
-        width: 160px;
-        height: 160px;
-        border-radius: 50%;
-        border: 5px solid #f2c94c;
-        margin-bottom: 15px;
-        object-fit: cover;
-    }
-   /* Song Box Styling */
+img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 5px solid #f2c94c;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+/* Song Box Styling */
 .song-box {
     background: #f7f9ff;
     border: 2px solid #003366;
@@ -162,6 +162,41 @@
 .note2 { left: 50%; animation-delay: 1.8s; }
 .note3 { left: 75%; animation-delay: 3.2s; }
 
+/* Flex container for Home page */
+.home-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap; /* responsive */
+}
+
+/* Video box */
+.home-video video {
+    width: 400px;
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Text box */
+.home-text {
+    max-width: 500px;
+    text-align: left;
+}
+
+.home-text h1 {
+    font-size: 2.2rem;
+    color: #003366;
+    margin-bottom: 15px;
+}
+
+.home-text p {
+    font-size: 1rem;
+    color: #000;
+    margin-bottom: 12px;
+}
 </style>
 </head>
 
@@ -174,23 +209,30 @@
     <a href="#" onclick="showPage(3)" id="nav3">Hobby</a>
     <a href="#" onclick="showPage(4)" id="nav4">Experience</a>
     <a href="#" onclick="showPage(5)" id="nav5">Contact</a>
-   <a href="#" onclick="showPage(6)" id="nav5">Memory</a>
+    <a href="#" onclick="showPage(6)" id="nav6">Memory</a>
 </div>
-
 
 <div class="container">
 
-    <!-- PAGE 1 -->
+    <!-- PAGE 1: Home with Video + Text -->
     <section class="page active-page" id="page1">
-        <img src="me1.jpg">
-        <h1>Hello, I’m Nur Aleesa Qistina 👋</h1>
-        <p><b>Student ID:</b> 2023875766</p>
-        <p>I am pursuing a <b>Diploma in Information Management</b> at UiTM Kedah.</p>
+        <div class="home-flex">
+            <!-- Left: Video Box -->
+            <div class="home-video">
+                <video src="intro.mp4" autoplay muted loop playsinline></video>
+            </div>
 
-        <button onclick="showPage(2)">Next ➡️</button>
+            <!-- Right: Text Box -->
+            <div class="home-text">
+                <h1>Hello, I’m Nur Aleesa Qistina 👋</h1>
+                <p><b>Student ID:</b> 2023875766</p>
+                <p>I am pursuing a <b>Diploma in Information Management</b> at UiTM Kedah.</p>
+                <button onclick="showPage(2)">Next ➡️</button>
+            </div>
+        </div>
     </section>
 
-    <!-- PAGE 2 -->
+    <!-- PAGE 2: Education -->
     <section class="page" id="page2">
         <h1>🎓 Education</h1>
         <p><b>SK Pagar Museh</b> (2012–2017)</p>
@@ -200,31 +242,30 @@
         <button onclick="showPage(3)">Next ➡️</button>
     </section>
 
-    <!-- PAGE 3 (HOBBY + MP3 + ANIMATION) -->
-<section class="page" id="page3">
-    <h1>🎧 Hobby</h1>
-    <p>I enjoy listening to music while studying or during my free time.  
-       Below is my favourite songs that I usually listen to. 🎶</p>
+    <!-- PAGE 3: Hobby + Music -->
+    <section class="page" id="page3">
+        <h1>🎧 Hobby</h1>
+        <p>I enjoy listening to music while studying or during my free time.  
+           Below is my favourite songs that I usually listen to. 🎶</p>
 
-    <!-- SONG 1 -->
-    <div class="song-box">
-        <h3>🎵 Song 1: (Change Song Name)</h3>
-        <audio controls>
-            <source src="lagu1.mp3" type="audio/mp3">
-        </audio>
-    </div>
+        <!-- SONG 1 -->
+        <div class="song-box">
+            <h3>🎵 Song 1: (Change Song Name)</h3>
+            <audio controls>
+                <source src="lagu1.mp3" type="audio/mp3">
+            </audio>
+        </div>
 
-    <!-- MOVING OBJECT (Floating Music Notes) -->
-    <div class="music-note note1">🎶</div>
-    <div class="music-note note2">🎵</div>
-    <div class="music-note note3">✨</div>
+        <!-- MOVING OBJECT (Floating Music Notes) -->
+        <div class="music-note note1">🎶</div>
+        <div class="music-note note2">🎵</div>
+        <div class="music-note note3">✨</div>
 
-    <button onclick="showPage(2)">⬅️ Back</button>
-    <button onclick="showPage(4)">Next ➡️</button>
-</section>
+        <button onclick="showPage(2)">⬅️ Back</button>
+        <button onclick="showPage(4)">Next ➡️</button>
+    </section>
 
-
-    <!-- PAGE 4 -->
+    <!-- PAGE 4: Experience -->
     <section class="page" id="page4">
         <h1>🌟 Experience</h1>
         <p>• Library management projects</p>
@@ -234,7 +275,7 @@
         <button onclick="showPage(5)">Next ➡️</button>
     </section>
 
-     <!-- PAGE 5 -->
+    <!-- PAGE 5: Contact -->
     <section class="page" id="page5">
         <h1>📞 Contact Me</h1>
         <p><b>Email:</b> aleesa30102005@gmail.com</p>
@@ -244,16 +285,16 @@
         <button onclick="showPage(1)">Next ➡️</button>
     </section>
 
-   <!-- PAGE 6 -->
+    <!-- PAGE 6: Memory -->
     <section class="page" id="page6">
         <h1>🌟 Memory</h1>
         <p><b>Email:</b> aleesa30102005@gmail.com</p>
         <p><b>Phone:</b> 010-2652908</p>
         <p><b>Address:</b> Kuala Ketil, Kedah</p>
-        <button onclick="showPage(4)">⬅️ Back</button>
+        <button onclick="showPage(5)">⬅️ Back</button>
         <button onclick="showPage(1)">🏠 Home</button>
     </section>
-   
+
 </div>
 
 <script>
@@ -272,9 +313,3 @@ function showPage(num) {
 
 </body>
 </html>
-
-
-
-
-
-
