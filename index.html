@@ -17,11 +17,9 @@
 }
 
 body {
-    background: linear-gradient(135deg, #003366, #0073e6, #f2c94c);
+    background: linear-gradient(135deg, #ff99cc, #ff66aa, #ff3399);
     background-size: 400% 400%;
     animation: bgMove 12s ease infinite;
-    display: block;
-    overflow-x: auto;
 }
 
 @keyframes bgMove {
@@ -61,10 +59,10 @@ body {
 
 /* Main white container with glowing effect */
 .container {
-    margin: 80px auto;
-    max-width: 1200px;
-    padding: 60px;
-    border-radius: 25px;
+    max-width: 1000px;   /* saiz yang sama untuk semua page */
+    padding: 50px;       /* padding sama untuk semua page */
+    margin: 80px auto;   /* center container dan jarak dari atas */
+    border-radius: 25px; 
     background: white;
 }
     /* Flex container untuk Experience page */
@@ -319,15 +317,6 @@ img {
     transform: scale(1.1);
 }
     
-/* Khusus untuk Education page (page2) */
-#page2 .edu-item img {
-    width: 300px;        /* atau ikut saiz awak */
-    height: auto;         /* kekalkan nisbah asal */
-    border-radius: 15px;  /* bulat sikit, bukan perfect circle */
-    border: 3px solid #003366;
-    object-fit: cover;
-}
-
 </style>
 </head>
 
@@ -508,5 +497,6 @@ document.getElementById('scrollDown').addEventListener('click', function() {
 
 </body>
 </html>
+
 
 
