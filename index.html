@@ -65,6 +65,49 @@ body {
     border-radius: 25px; 
     background: white;
 }
+     
+.container {
+    max-width: 1000px;           /* saiz sama untuk semua page */
+    padding: 50px;                /* padding dalam */
+    margin: 80px auto;            /* tengah page */
+    border-radius: 25px;          /* sudut bulat */
+    background: white;            /* putih di tengah */
+    position: relative;
+
+    /* Pink neon glow */
+    box-shadow: 
+        0 0 10px #ff69b4, 
+        0 0 20px #ff69b4, 
+        0 0 30px #ff69b4, 
+        0 0 40px #ff69b4;
+    
+    /* Animasi kelip */
+    animation: neonGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes neonGlow {
+    0% {
+        box-shadow: 
+            0 0 5px #ff69b4, 
+            0 0 10px #ff69b4, 
+            0 0 15px #ff69b4, 
+            0 0 20px #ff69b4;
+    }
+    50% {
+        box-shadow: 
+            0 0 15px #ff69b4, 
+            0 0 30px #ff69b4, 
+            0 0 45px #ff69b4, 
+            0 0 60px #ff69b4;
+    }
+    100% {
+        box-shadow: 
+            0 0 10px #ff69b4, 
+            0 0 20px #ff69b4, 
+            0 0 30px #ff69b4, 
+            0 0 40px #ff69b4;
+    }
+    
     /* Flex container untuk Experience page */
 .experience-flex {
     display: flex;
@@ -497,6 +540,7 @@ document.getElementById('scrollDown').addEventListener('click', function() {
 
 </body>
 </html>
+
 
 
 
