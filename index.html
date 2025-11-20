@@ -4,81 +4,61 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Aleesa’s Resume</title>
-
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
 <style>
 /* ---------- base ---------- */
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
 
 /* ---------- NEW: blue gradient background + slow animation ---------- */
 body{
-  background: linear-gradient(135deg,#002b5c 0%,#0066cc 45%,#66b2ff 100%);
-  background-size:400% 400%;
-  animation: bgMove 12s ease infinite;
-  min-height:100vh;
-  overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+ background: linear-gradient(135deg,#002b5c 0%,#0066cc 45%,#66b2ff 100%);
+ background-size:400% 400%;
+ animation: bgMove 12s ease infinite;
+ min-height:100vh;
+ overflow-x:hidden;
+ -webkit-font-smoothing:antialiased;
+ -moz-osx-font-smoothing:grayscale;
 }
 @keyframes bgMove{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+ 0%{background-position:0% 50%}
+ 50%{background-position:100% 50%}
+ 100%{background-position:0% 50%}
 }
 
 /* ---------- NAV ---------- */
 .navbar{
-  position:fixed;
-  top:0;
-  width:100%;
-  background:rgba(255,255,255,0.90);
-  padding:12px 0;
-  text-align:center;
-  box-shadow:0 4px 10px rgba(0,0,0,0.12);
-  backdrop-filter:blur(5px);
-  z-index:1200;
+ position:fixed;
+ top:0;
+ width:100%;
+ background:rgba(255,255,255,0.90);
+ padding:12px 0;
+ text-align:center;
+ box-shadow:0 4px 10px rgba(0,0,0,0.12);
+ backdrop-filter:blur(5px);
+ z-index:1200;
 }
 .navbar a{
-  margin:0 15px;color:#003366;font-weight:600;text-decoration:none;padding:8px 16px;border-radius:20px;transition:.25s;
+ margin:0 15px;color:#003366;font-weight:600;text-decoration:none;padding:8px 16px;border-radius:20px;transition:.25s;
 }
 .navbar a:hover,.navbar a.active{background:#003366;color:#fff;}
 
 /* ---------- container ---------- */
 .container{
-  max-width:1000px;
-  padding:50px;
-  margin:80px auto;
-  border-radius:25px;
-  background:white;
-  z-index:1;
-  position:relative;
-  box-shadow:
-    0 0 6px rgba(255,215,0,0.7),
-    0 0 14px rgba(255,215,0,0.55),
-    0 0 30px rgba(255,215,0,0.35);
-  animation: neonYellow 2.2s ease-in-out infinite alternate;
+ max-width:1000px;
+ padding:50px;
+ margin:80px auto;
+ border-radius:25px;
+ background:white;
+ z-index:1;
+ position:relative;
+ box-shadow: 0 0 6px rgba(255,215,0,0.7), 0 0 14px rgba(255,215,0,0.55), 0 0 30px rgba(255,215,0,0.35);
+ animation: neonYellow 2.2s ease-in-out infinite alternate;
 }
 @keyframes neonYellow{
-  0%{
-    box-shadow:
-      0 0 6px rgba(255,215,0,0.45),
-      0 0 12px rgba(255,215,0,0.35),
-      0 0 22px rgba(255,215,0,0.20);
-  }
-  50%{
-    box-shadow:
-      0 0 12px rgba(255,215,0,0.9),
-      0 0 28px rgba(255,215,0,0.65),
-      0 0 48px rgba(255,215,0,0.4);
-  }
-  100%{
-    box-shadow:
-      0 0 8px rgba(255,215,0,0.6),
-      0 0 18px rgba(255,215,0,0.5),
-      0 0 34px rgba(255,215,0,0.3);
-  }
+ 0%{ box-shadow: 0 0 6px rgba(255,215,0,0.45), 0 0 12px rgba(255,215,0,0.35), 0 0 22px rgba(255,215,0,0.20); }
+ 50%{ box-shadow: 0 0 12px rgba(255,215,0,0.9), 0 0 28px rgba(255,215,0,0.65), 0 0 48px rgba(255,215,0,0.4); }
+ 100%{ box-shadow: 0 0 8px rgba(255,215,0,0.6), 0 0 18px rgba(255,215,0,0.5), 0 0 34px rgba(255,215,0,0.3); }
 }
 
 /* pages */
@@ -88,34 +68,44 @@ body{
 
 /* buttons */
 button{
-  background:#003366;color:white;border:none;padding:10px 30px;border-radius:25px;cursor:pointer;margin:10px;transition:.3s;
+ background:#003366;color:white;border:none;padding:10px 30px;border-radius:25px;cursor:pointer;margin:10px;transition:.3s;
 }
 button:hover{background:#f2c94c;color:#003366;transform:scale(1.05)}
 
 /* global images */
-img{
-  width:200px;height:200px;border-radius:50%;border:5px solid #003366;
-  margin-bottom:15px;object-fit:cover;
-}
+img{ width:200px;height:200px;border-radius:50%;border:5px solid #003366; margin-bottom:15px;object-fit:cover; }
 
 /* Hobby centered */
-#page2 .song-box{
-  margin-left:auto;margin-right:auto;display:block;text-align:center;
-}
+#page2 .song-box{ margin-left:auto;margin-right:auto;display:block;text-align:center; }
 
-/* Education images centered */
-#page3 .education-flex{display:flex;justify-content:center;flex-wrap:wrap;gap:30px}
+/* Education images stacked vertically */
+#page3 .education-flex{
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ gap:30px;
+}
 #page3 .edu-item{text-align:center}
 #page3 .edu-item img{width:100%;max-width:300px;border-radius:15px;border:3px solid #003366;object-fit:cover}
 
-/* Experience */
-.experience-flex{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;margin-top:30px}
-.exp-item{flex:1 1 45%;text-align:center}
+/* Experience stacked vertically */
+#page4 .experience-flex{
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ gap:30px;
+}
+.exp-item{flex:none;text-align:center}
 .exp-item img{width:100%;max-width:300px;border-radius:15px;border:3px solid #003366;margin-bottom:10px;object-fit:cover}
 
-/* Memory */
-.memory-flex{display:flex;justify-content:center;flex-wrap:wrap;gap:25px;margin-top:20px}
-.memory-item{flex:1 1 180px;text-align:center}
+/* Memory stacked vertically */
+#page5 .memory-flex{
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ gap:25px;
+}
+.memory-item{flex:none;text-align:center}
 .memory-item img{width:180px;height:180px;border-radius:15px;object-fit:cover;border:3px solid #003366;box-shadow:0 5px 15px rgba(0,0,0,0.2);margin-bottom:8px}
 
 /* Contact */
@@ -137,55 +127,50 @@ img{
 .scroll-buttons button:hover{background:#00d4ff;transform:scale(1.1)}
 </style>
 </head>
-
 <body>
-
 <!-- Scroll Buttons -->
 <div class="scroll-buttons">
-  <button id="scrollUp">▲</button>
-  <button id="scrollDown">▼</button>
+ <button id="scrollUp">▲</button>
+ <button id="scrollDown">▼</button>
 </div>
 
-<!-- NAVBAR (HOBBY now page 2, EDUCATION now page 3) -->
+<!-- NAVBAR -->
 <div class="navbar">
-  <a href="#" onclick="showPage(1)" id="nav1" class="active">Home</a>
-  <a href="#" onclick="showPage(2)" id="nav2">Hobby</a>
-  <a href="#" onclick="showPage(3)" id="nav3">Education</a>
-  <a href="#" onclick="showPage(4)" id="nav4">Experience</a>
-  <a href="#" onclick="showPage(5)" id="nav5">Memory</a>
-  <a href="#" onclick="showPage(6)" id="nav6">Contact</a>
+ <a href="#" onclick="showPage(1)" id="nav1" class="active">Home</a>
+ <a href="#" onclick="showPage(2)" id="nav2">Hobby</a>
+ <a href="#" onclick="showPage(3)" id="nav3">Education</a>
+ <a href="#" onclick="showPage(4)" id="nav4">Experience</a>
+ <a href="#" onclick="showPage(5)" id="nav5">Memory</a>
+ <a href="#" onclick="showPage(6)" id="nav6">Contact</a>
 </div>
 
 <div class="container">
-
-<!-- PAGE 1: Home -->
-<section class="page active-page" id="page1">
+ <!-- PAGE 1: Home -->
+ <section class="page active-page" id="page1">
   <div class="home-flex">
-    <div class="home-video">
-      <img src="homepagebaru.jpg" alt="Intro Image">
-    </div>
-    <div class="home-text">
-      <h1>Hello, I’m Nur Aleesa Qistina 👋</h1>
-      <p><b>Student ID:</b> 2023875766</p>
-      <p>I am pursuing a <b>Diploma in Information Management</b> at UiTM Kedah.</p>
-      <button onclick="showPage(2)">Next ➡️</button>
-    </div>
+   <div class="home-video">
+    <img src="homepagebaru.jpg" alt="Intro Image">
+   </div>
+   <div class="home-text">
+    <h1>Hello, I’m Nur Aleesa Qistina 👋</h1>
+    <p><b>Student ID:</b> 2023875766</p>
+    <p>I am pursuing a <b>Diploma in Information Management</b> at UiTM Kedah.</p>
+    <button onclick="showPage(2)">Next ➡️</button>
+   </div>
   </div>
-</section>
+ </section>
 
-<!-- PAGE 2: Hobby (formerly page 3) -->
-<section class="page" id="page2">
+ <!-- PAGE 2: Hobby -->
+ <section class="page" id="page2">
   <h1>🎧 Hobby</h1>
   <p>I love listening to this song because it gives off a very poetic vibe. I will play this song when I drive. 🎶</p>
-
   <div class="song-box">
-    <h3>🎵 Ombak Rindu by Hafiz Suip & Adira Suhaimi</h3>
-    <audio controls>
-      <source src="ombakrindu.mp3" type="audio/mp3">
-    </audio>
+   <h3>🎵 Ombak Rindu by Hafiz Suip & Adira Suhaimi</h3>
+   <audio controls>
+    <source src="ombakrindu.mp3" type="audio/mp3">
+   </audio>
   </div>
-
-  <!-- floating music notes unchanged -->
+  <!-- floating music notes -->
   <div class="music-note note1">🎶</div>
   <div class="music-note note2">🎵</div>
   <div class="music-note note3">✨</div>
@@ -196,145 +181,128 @@ img{
   <div class="music-note note8">🎶</div>
   <div class="music-note note9">✨</div>
   <div class="music-note note10">🎵</div>
-
   <button onclick="showPage(1)">⬅️ Back</button>
   <button onclick="showPage(3)">Next ➡️</button>
-</section>
+ </section>
 
-<!-- PAGE 3: Education (formerly page 2) -->
-<section class="page" id="page3">
+ <!-- PAGE 3: Education -->
+ <section class="page" id="page3">
   <h1>🎓 Education</h1>
   <div class="education-flex">
-    <div class="edu-item">
-      <img src="skpagarmuseh.jpg" alt="SK Pagar Museh">
-      <p>SK Pagar Museh (2012–2017)</p>
-    </div>
-    <div class="edu-item">
-      <img src="smksgkarangan.jpg" alt="SMK Sungai Karangan">
-      <p>SMK Sungai Karangan (2018–2022)</p>
-    </div>
-    <div class="edu-item">
-      <img src="uitm.jpg" alt="UiTM Kedah">
-      <p>UiTM Kedah – Diploma in Information Management (2023–2026)</p>
-    </div>
+   <div class="edu-item">
+    <img src="skpagarmuseh.jpg" alt="SK Pagar Museh">
+    <p>SK Pagar Museh (2012–2017)</p>
+   </div>
+   <div class="edu-item">
+    <img src="smksgkarangan.jpg" alt="SMK Sungai Karangan">
+    <p>SMK Sungai Karangan (2018–2022)</p>
+   </div>
+   <div class="edu-item">
+    <img src="uitm.jpg" alt="UiTM Kedah">
+    <p>UiTM Kedah – Diploma in Information Management (2023–2026)</p>
+   </div>
   </div>
-
   <button onclick="showPage(2)">⬅️ Back</button>
   <button onclick="showPage(4)">Next ➡️</button>
-</section>
+ </section>
 
-<!-- PAGE 4,5,6 tetap sama -->
-<section class="page" id="page4">
+ <!-- PAGE 4: Experience -->
+ <section class="page" id="page4">
   <h1>🌟 Experience</h1>
   <div class="experience-flex">
-    <div class="exp-item">
-      <img src="hiking.jpg">
-      <p>Hiking at H hill with my sister</p>
-    </div>
-    <div class="exp-item">
-      <img src="intern.jpg">
-      <p>I went for two months of practical training at Baling Hospital.</p>
-    </div>
-    <div class="exp-item">
-      <img src="emcee.jpg">
-      <p>I conducted a workshop that organized by the RSY Club UITM Kedah</p>
-    </div>
-    <div class="exp-item">
-      <img src="volunteer.jpg">
-      <p>Volunteer activity at local community center</p>
-    </div>
+   <div class="exp-item">
+    <img src="hiking.jpg">
+    <p>Hiking at H hill with my sister</p>
+   </div>
+   <div class="exp-item">
+    <img src="intern.jpg">
+    <p>I went for two months of practical training at Baling Hospital.</p>
+   </div>
+   <div class="exp-item">
+    <img src="emcee.jpg">
+    <p>I conducted a workshop that organized by the RSY Club UITM Kedah</p>
+   </div>
+   <div class="exp-item">
+    <img src="volunteer.jpg">
+    <p>Volunteer activity at local community center</p>
+   </div>
   </div>
   <button onclick="showPage(3)">⬅️ Back</button>
   <button onclick="showPage(5)">Next ➡️</button>
-</section>
+ </section>
 
-<section class="page" id="page5">
+ <!-- PAGE 5: Memory -->
+ <section class="page" id="page5">
   <h1>🌟 Memory</h1>
   <div class="memory-flex">
-    <div class="memory-item"><img src="family.jpg"><p>Caption 1</p></div>
-    <div class="memory-item"><img src="siblings.jpg"><p>Caption 2</p></div>
-    <div class="memory-item"><img src="anugerahkoko.jpg"><p>Caption 3</p></div>
-    <div class="memory-item"><img src="skpm.jpg"><p>Caption 4</p></div>
-    <div class="memory-item"><img src="favorito.jpg"><p>Caption 5</p></div>
+   <div class="memory-item"><img src="family.jpg"><p>Caption 1</p></div>
+   <div class="memory-item"><img src="siblings.jpg"><p>Caption 2</p></div>
+   <div class="memory-item"><img src="anugerahkoko.jpg"><p>Caption 3</p></div>
+   <div class="memory-item"><img src="skpm.jpg"><p>Caption 4</p></div>
+   <div class="memory-item"><img src="favorito.jpg"><p>Caption 5</p></div>
   </div>
   <button onclick="showPage(4)">⬅️ Back</button>
   <button onclick="showPage(6)">Next ➡️</button>
-</section>
+ </section>
 
-<section class="page" id="page6">
+ <!-- PAGE 6: Contact -->
+ <section class="page" id="page6">
   <h1>📞 Contact Me</h1>
-
   <div class="contact-icons">
-    <a href="https://www.instagram.com/nuraleesa"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"></a>
-    <a href="https://www.facebook.com/aleesa_qistina"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"></a>
-    <a href="https://wa.me/601012652908"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"></a>
-    <a href="mailto:aleesa30102005@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/561/561127.png"></a>
+   <a href="https://www.instagram.com/nuraleesa"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"></a>
+   <a href="https://www.facebook.com/aleesa_qistina"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"></a>
+   <a href="https://wa.me/601012652908"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"></a>
+   <a href="mailto:aleesa30102005@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/561/561127.png"></a>
   </div>
-
   <button onclick="showPage(5)">⬅️ Back</button>
   <button onclick="showPage(1)">🏠 Home</button>
-</section>
-
+ </section>
 </div>
 
 <script>
 function showPage(num){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active-page'));
-  document.getElementById('page'+num).classList.add('active-page');
-  document.querySelectorAll('.navbar a').forEach(a=>a.classList.remove('active'));
-  document.getElementById('nav'+num).classList.add('active');
-  window.scrollTo({top: document.querySelector('.container').offsetTop - 20, behavior:'smooth'});
+ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active-page'));
+ document.getElementById('page'+num).classList.add('active-page');
+ document.querySelectorAll('.navbar a').forEach(a=>a.classList.remove('active'));
+ document.getElementById('nav'+num).classList.add('active');
+ window.scrollTo({top: document.querySelector('.container').offsetTop - 20, behavior:'smooth'});
 }
-
 document.getElementById('scrollUp').onclick=()=>window.scrollBy({top:-400,behavior:'smooth'});
 document.getElementById('scrollDown').onclick=()=>window.scrollBy({top:400,behavior:'smooth'});
 
 /* click sound */
 const audioCtx=new (window.AudioContext||window.webkitAudioContext)();
 function playClickTone(){
-  try{
-    const now=audioCtx.currentTime;
-    const o=audioCtx.createOscillator();
-    const g=audioCtx.createGain();
-    o.type='sine';o.frequency.setValueAtTime(880,now);
-    g.gain.setValueAtTime(0.00001,now);
-    g.gain.exponentialRampToValueAtTime(0.12,now+0.01);
-    g.gain.exponentialRampToValueAtTime(0.0001,now+0.3);
-    o.connect(g);g.connect(audioCtx.destination);
-    o.start(now);o.stop(now+0.35);
-  }catch(e){if(audioCtx.state==='suspended')audioCtx.resume();}
+ try{
+ const now=audioCtx.currentTime;
+ const o=audioCtx.createOscillator();
+ const g=audioCtx.createGain();
+ o.type='sine';o.frequency.setValueAtTime(880,now);
+ g.gain.setValueAtTime(0.00001,now);
+ g.gain.exponentialRampToValueAtTime(0.12,now+0.01);
+ g.gain.exponentialRampToValueAtTime(0.0001,now+0.3);
+ o.connect(g);g.connect(audioCtx.destination);
+ o.start(now);o.stop(now+0.35);
+ }catch(e){if(audioCtx.state==='suspended')audioCtx.resume();}
 }
-
 function spawnHeart(x,y){
-  const heart=document.createElement('div');
-  heart.textContent='💖';
-  heart.style.position='fixed';
-  heart.style.left=(x-12)+'px';
-  heart.style.top=(y-12)+'px';
-  heart.style.fontSize='28px';
-  heart.style.pointerEvents='none';
-  heart.style.zIndex=99999;
-  heart.style.opacity='1';
-  heart.style.transform='translateY(0) scale(1)';
-  heart.style.transition='transform .9s ease, opacity .9s ease';
-  document.body.appendChild(heart);
-  requestAnimationFrame(()=>{
-    heart.style.transform='translateY(-60px) scale(1.3)';
-    heart.style.opacity='0';
-  });
-  setTimeout(()=>heart.remove(),900);
+ const heart=document.createElement('div');
+ heart.textContent='💖';
+ heart.style.position='fixed';
+ heart.style.left=(x-12)+'px';
+ heart.style.top=(y-12)+'px';
+ heart.style.fontSize='28px';
+ heart.style.pointerEvents='none';
+ heart.style.zIndex=99999;
+ heart.style.opacity='1';
+ heart.style.transform='translateY(0) scale(1)';
+ heart.style.transition='transform .9s ease, opacity .9s ease';
+ document.body.appendChild(heart);
+ requestAnimationFrame(()=>{ heart.style.transform='translateY(-60px) scale(1.3)'; heart.style.opacity='0'; });
+ setTimeout(()=>heart.remove(),900);
 }
-
-document.addEventListener('click',e=>{
-  playClickTone();
-  spawnHeart(e.clientX,e.clientY);
-});
-
-document.addEventListener('pointerdown',function initAudio(){
-  if(audioCtx.state==='suspended')audioCtx.resume();
-  document.removeEventListener('pointerdown',initAudio);
-});
+document.addEventListener('click',e=>{ playClickTone(); spawnHeart(e.clientX,e.clientY); });
+document.addEventListener('pointerdown',function initAudio(){ if(audioCtx.state==='suspended')audioCtx.resume(); document.removeEventListener('pointerdown',initAudio); });
 </script>
-
 </body>
 </html>
