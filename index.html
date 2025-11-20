@@ -78,8 +78,16 @@ body{
 .page p, #page2 h3, #page4 .exp-item p, #page5 .memory-item p, #page3 .edu-item p{
  font-family: 'STIX Two Math', serif;
  font-style:italic;
- color:#3399FF;
+ color:#1a4d99; /* ubah dari #3399FF ke biru sedikit gelap */
 }
+
+/* selaraskan saiz font mengikut page */
+#page1 p{ font-size:1.15rem; }
+#page2 p{ font-size:1.1rem; }
+#page2 h3{ font-size:1.2rem; }
+#page3 .edu-item p{ font-size:1.05rem; }
+#page4 .exp-item p{ font-size:1.1rem; }
+#page5 .memory-item p{ font-size:1.08rem; }
 
 /* ---------- PAGE 2: Hobby row spacing ---------- */
 #page2 p, #page2 h3{
@@ -144,7 +152,8 @@ img{ width:200px;height:200px;border-radius:50%; border:5px solid #003366; margi
 }
 .memory-item p{
  margin:0;
- font-size:1.1rem;
+ font-size:1.08rem;
+ color:#1a4d99; /* pastikan memory caption ikut warna baru */
 }
 
 /* ---------- Contact - 2x2 grid + colourful border ---------- */
@@ -422,4 +431,3 @@ document.addEventListener('pointerdown',function initAudio(){ if(audioCtx.state=
 </script>
 </body>
 </html>
-
