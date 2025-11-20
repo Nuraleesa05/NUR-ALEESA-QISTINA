@@ -57,78 +57,15 @@ body {
     color: white;
 }
 
-/* Main white container with neon pink glow */
+/* Main white container with glowing effect */
 .container {
-    max-width: 1000px;
-    padding: 50px;
-    margin: 80px auto;
-    border-radius: 25px;
+    max-width: 1000px;   /* saiz yang sama untuk semua page */
+    padding: 50px;       /* padding sama untuk semua page */
+    margin: 80px auto;   /* center container dan jarak dari atas */
+    border-radius: 25px; 
     background: white;
-    position: relative;
-
-    /* Pink neon glow */
-    box-shadow: 
-        0 0 10px #ff69b4, 
-        0 0 20px #ff69b4, 
-        0 0 30px #ff69b4, 
-        0 0 40px #ff69b4;
-
-    animation: neonGlow 2s ease-in-out infinite alternate;
 }
-
-@keyframes neonGlow {
-    0% {
-        box-shadow: 
-            0 0 5px #ff69b4, 
-            0 0 10px #ff69b4, 
-            0 0 15px #ff69b4, 
-            0 0 20px #ff69b4;
-    }
-    50% {
-        box-shadow: 
-            0 0 15px #ff69b4, 
-            0 0 30px #ff69b4, 
-            0 0 45px #ff69b4, 
-            0 0 60px #ff69b4;
-    }
-    100% {
-        box-shadow: 
-            0 0 10px #ff69b4, 
-            0 0 20px #ff69b4, 
-            0 0 30px #ff69b4, 
-            0 0 40px #ff69b4;
-    }
-}
-
-/* Flex container for Education page images */
-.education-flex {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-.edu-item {
-    flex: 1 1 250px;
-    text-align: center;
-}
-
-.edu-item img {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 15px;
-    border: 3px solid #003366;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    margin-bottom: 10px;
-}
-
-.edu-item p {
-    font-size: 1rem;
-    color: #003366;
-    font-weight: 500;
-}
-
-/* Flex container for Experience page */
+    /* Flex container untuk Experience page */
 .experience-flex {
     display: flex;
     flex-wrap: wrap;
@@ -138,13 +75,13 @@ body {
 }
 
 .exp-item {
-    flex: 1 1 45%;
+    flex: 1 1 45%; /* dua kolum per baris, responsive */
     text-align: center;
 }
 
 .exp-item img {
     width: 100%;
-    max-width: 300px;
+    max-width: 300px;  /* maksimum lebar gambar */
     border-radius: 15px;
     border: 3px solid #003366;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
@@ -155,6 +92,13 @@ body {
     font-size: 1rem;
     color: #003366;
     font-weight: 500;
+}
+
+/* Glow animation */
+@keyframes yellowGlow {
+    0% { box-shadow: 0 0 15px 2px rgba(255, 220, 0, 0.5); }
+    50% { box-shadow: 0 0 35px 12px rgba(255, 220, 0, 1); }
+    100% { box-shadow: 0 0 15px 2px rgba(255, 220, 0, 0.5); }
 }
 
 .page {
@@ -229,6 +173,7 @@ img {
     100% { transform: translateY(-100px) scale(0.8); opacity: 0; }
 }
 
+/* Note positions */
 .note1 { left: 20%; animation-delay: 0s; }
 .note2 { left: 50%; animation-delay: 1.8s; }
 .note3 { left: 75%; animation-delay: 3.2s; }
@@ -250,6 +195,7 @@ img {
     flex-wrap: wrap;
 }
 
+/* Image box */
 .home-video {
     display: flex;
     justify-content: center;
@@ -262,6 +208,7 @@ img {
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
+/* Text box */
 .home-text {
     max-width: 500px;
     text-align: left;
@@ -278,35 +225,68 @@ img {
     color: #000;
     margin-bottom: 12px;
 }
-
-/* Container untuk ikon */
+   /* Container untuk ikon */
 .contact-icons {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 20px;  /* jarak antara ikon */
     margin: 20px 0;
 }
 
+/* Gaya ikon */
 .contact-icons img {
-    width: 70px;
+    width: 70px;   /* saiz default untuk desktop */
     height: 70px;
     border-radius: 10px;
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
 }
 
+/* Hover effect */
 .contact-icons img:hover {
     transform: scale(1.2);
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
+/* Responsive untuk skrin kecil */
 @media screen and (max-width: 600px) {
-    .contact-icons img { width: 50px; height: 50px; }
-    .contact-icons { gap: 15px; }
-    #page6 .memory-flex { display: flex; justify-content: center; flex-wrap: wrap; gap: 25px; margin-top: 20px; }
-    .memory-item { flex: 1 1 180px; text-align: center; }
-    .memory-item img { width: 180px; height: 180px; border-radius: 15px; object-fit: cover; border: 3px solid #003366; box-shadow: 0 5px 15px rgba(0,0,0,0.2); margin-bottom: 8px; }
-    .memory-item p { font-size: 0.9rem; color: #003366; font-weight: 500; }
+    .contact-icons img {
+        width: 50px;   /* saiz lebih kecil untuk fon */
+        height: 50px;
+    }
+    .contact-icons {
+        gap: 15px;   /* kurang jarak */
+    }
+
+    /* Container untuk Memory page */
+#page6 .memory-flex {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+/* Item gambar dan caption */
+.memory-item {
+    flex: 1 1 180px; /* responsive: min 180px per item */
+    text-align: center;
+}
+
+.memory-item img {
+    width: 180px;   /* saiz gambar */
+    height: 180px;
+    border-radius: 15px;
+    object-fit: cover;
+    border: 3px solid #003366;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    margin-bottom: 8px;
+}
+
+.memory-item p {
+    font-size: 0.9rem;
+    color: #003366;
+    font-weight: 500;
 }
 
 /* Scroll Buttons CSS */
@@ -336,6 +316,7 @@ img {
     background: #00d4ff;
     transform: scale(1.1);
 }
+    
 </style>
 </head>
 
@@ -424,6 +405,7 @@ img {
 <section class="page" id="page4">
     <h1>🌟 Experience</h1>
 
+    <!-- Flex container untuk 4 gambar -->
     <div class="experience-flex">
         <div class="exp-item">
             <img src="hiking.jpg" alt="Experience 1">
@@ -437,10 +419,7 @@ img {
             <img src="emcee.jpg" alt="Experience 3">
             <p>I conducted a workshop that organized by the RSY Club UITM Kedah</p>
         </div>
-        <div class="exp-item">
-            <img src="volunteer.jpg" alt="Experience 4">
-            <p>Volunteer activity at local community center</p>
-        </div>
+        
     </div>
 
     <button onclick="showPage(3)">⬅️ Back</button>
@@ -451,6 +430,7 @@ img {
 <section class="page" id="page5">
     <h1>📞 Contact Me</h1>
 
+    <!-- Social Media Icons -->
     <div class="contact-icons">
         <a href="https://www.instagram.com/nuraleesa" target="_blank">
             <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
@@ -470,36 +450,54 @@ img {
     <button onclick="showPage(6)">Next ➡️</button>
 </section>
 
+
 <!-- PAGE 6: Memory -->
 <section class="page" id="page6">
     <h1>🌟 Memory</h1>
     
     <div class="memory-flex">
-        <div class="memory-item">
-            <img src="family.jpg" alt="Memory 1">
-            <p>Caption 1</p>
-        </div>
-        <div class="memory-item">
-            <img src="siblings.jpg" alt="Memory 2">
-            <p>Caption 2</p>
-        </div>
-        <div class="memory-item">
-            <img src="anugerahkoko.jpg" alt="Memory 3">
-            <p>Caption 3</p>
-        </div>
-        <div class="memory-item">
-            <img src="skpm.jpg" alt="Memory 4">
-            <p>Caption 4</p>
-        </div>
-        <div class="memory-item">
-            <img src="favorito.jpg" alt="Memory 5">
-            <p>Caption 5</p>
-        </div>
+    <div class="memory-item">
+        <img src="family.jpg" alt="Memory 1">
+        <p>Caption 1</p>
     </div>
-</section>
-
+    <div class="memory-item">
+        <img src="siblings.jpg" alt="Memory 2">
+        <p>Caption 2</p>
+    </div>
+    <div class="memory-item">
+        <img src="anugerahkoko.jpg" alt="Memory 3">
+        <p>Caption 3</p>
+    </div>
+    <div class="memory-item">
+        <img src="skpm.jpg" alt="Memory 4">
+        <p>Caption 4</p>
+    </div>
+    <div class="memory-item">
+        <img src="favorito.jpg" alt="Memory 5">
+        <p>Caption 5</p>
+    </div>
 </div>
 
 <script>
 function showPage(num) {
-    document.querySelectorAll('.page').forEach(p => p.class
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active-page'));
+    document.getElementById("page" + num).classList.add("active-page");
+    document.querySelectorAll('.navbar a').forEach(a => a.classList.remove('active'));
+    document.getElementById("nav" + num).classList.add("active");
+}
+
+// Scroll Buttons Function
+document.getElementById('scrollUp').addEventListener('click', function() {
+    window.scrollBy({ top: -300, behavior: 'smooth' });
+});
+document.getElementById('scrollDown').addEventListener('click', function() {
+    window.scrollBy({ top: 300, behavior: 'smooth' });
+});
+</script>
+
+</body>
+</html>
+
+
+
+
