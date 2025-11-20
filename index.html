@@ -117,7 +117,23 @@ button{
 button:hover{background:#f2c94c;color:#003366;transform:scale(1.05)}
 
 /* global images */
-img{ width:200px;height:200px;border-radius:50%; border:5px solid #003366; margin-bottom:15px;object-fit:cover; }
+img{
+ width:200px;
+ height:200px;
+ border-radius:50%;
+ border:5px solid #003366;
+ margin-bottom:15px;
+ object-fit:cover;
+ box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+ background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(0,0,0,0.1));
+ transition: transform 0.4s ease, box-shadow 0.4s ease;
+ animation: imgFloat 4s ease-in-out infinite alternate;
+}
+@keyframes imgFloat{
+ 0%{transform: translateY(0px);}
+ 50%{transform: translateY(-8px);}
+ 100%{transform: translateY(0px);}
+}
 
 /* Hobby centered */
 #page2 .song-box{ margin-left:auto;margin-right:auto;display:block;text-align:center; }
@@ -130,7 +146,7 @@ img{ width:200px;height:200px;border-radius:50%; border:5px solid #003366; margi
  gap:30px;
 }
 #page3 .edu-item{text-align:center}
-#page3 .edu-item img{width:100%;max-width:300px;border-radius:15px;border:3px solid #003366;object-fit:cover}
+#page3 .edu-item img{width:100%;max-width:300px;border-radius:15px;border:3px solid #003366;object-fit:cover;box-shadow:0 10px 25px rgba(0,0,0,0.3);background:linear-gradient(135deg, rgba(255,255,255,0.1), rgba(0,0,0,0.1));animation: imgFloat 4s ease-in-out infinite alternate;}
 
 /* Experience stacked vertically */
 #page4 .experience-flex{
@@ -140,7 +156,7 @@ img{ width:200px;height:200px;border-radius:50%; border:5px solid #003366; margi
  gap:30px;
 }
 .exp-item{flex:none;text-align:center}
-.exp-item img{width:100%;max-width:300px;border-radius:15px;border:3px solid #003366;margin-bottom:10px;object-fit:cover}
+.exp-item img{width:100%;max-width:300px;border-radius:15px;border:3px solid #003366;margin-bottom:10px;object-fit:cover;box-shadow:0 10px 25px rgba(0,0,0,0.3);background:linear-gradient(135deg, rgba(255,255,255,0.1), rgba(0,0,0,0.1));animation: imgFloat 4s ease-in-out infinite alternate;}
 
 /* Memory layout */
 #page5 .memory-flex{
@@ -163,7 +179,10 @@ img{ width:200px;height:200px;border-radius:50%; border:5px solid #003366; margi
  border-radius:15px;
  object-fit:cover;
  border:3px solid #003366;
- box-shadow:0 5px 15px rgba(0,0,0,0.2);
+ box-shadow:0 12px 28px rgba(0,0,0,0.35);
+ background:linear-gradient(135deg, rgba(255,255,255,0.1), rgba(0,0,0,0.1));
+ transition: transform 0.4s ease, box-shadow 0.4s ease;
+ animation: imgFloat 4s ease-in-out infinite alternate;
  margin-bottom:0;
 }
 .memory-item p{
@@ -223,7 +242,7 @@ img{ width:200px;height:200px;border-radius:50%; border:5px solid #003366; margi
 
 /* home */
 .home-flex{display:flex;flex-direction:row;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap}
-.home-video img{width:600px;height:400px;border-radius:50px;box-shadow:0 10px 25px rgba(0,0,0,0.2);}
+.home-video img{width:600px;height:400px;border-radius:50px;box-shadow:0 15px 35px rgba(0,0,0,0.35);background:linear-gradient(145deg, rgba(255,255,255,0.1), rgba(0,0,0,0.1));animation: imgFloat 4s ease-in-out infinite alternate;}
 
 /* scroll buttons */
 .scroll-buttons{position:fixed;bottom:40px;right:40px;display:flex;flex-direction:column;gap:10px;z-index:1300}
