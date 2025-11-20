@@ -134,27 +134,47 @@ img{ width:200px;height:200px;border-radius:50%; border:5px solid #003366; margi
  font-size:1.1rem;
 }
 
-/* Contact - vertical with larger animated icons */
-.contact-icons{
- display:flex;
- flex-direction:column;
- align-items:center;
+/* ---------- Contact - 2x2 grid + colourful border ---------- */
+#page6 .contact-icons{
+ display:grid;
+ grid-template-columns: repeat(2, 120px);
+ grid-template-rows: repeat(2, 120px);
+ justify-content:center;
  gap:30px;
  margin:20px 0;
 }
-.contact-icons a img{
- width:100px;
- height:100px;
+#page6 .contact-icons a{
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ width:120px;
+ height:120px;
  border-radius:50%;
- transition: all 0.3s ease;
+ background:linear-gradient(45deg, #ff5f6d, #ffc371, #9ee7ff, #ff6f91);
+ background-size:400% 400%;
+ animation: borderMove 4s linear infinite;
+ padding:10px;
+ transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#page6 .contact-icons a img{
+ width:100%;
+ height:100%;
+ border-radius:50%;
+ border:none;
+ transition: transform 0.3s ease, box-shadow 0.3s ease;
  animation: floatBounce 2s infinite alternate;
 }
-.contact-icons a img:hover{
- transform:scale(1.3) rotate(10deg);
+#page6 .contact-icons a:hover{
+ transform:scale(1.2) rotate(10deg);
  box-shadow:0 10px 20px rgba(0,0,0,0.4);
 }
+@keyframes borderMove{
+ 0%{background-position:0% 50%}
+ 50%{background-position:100% 50%}
+ 100%{background-position:0% 50%}
+}
 
-/* Icon animation */
+/* Icon float animation */
 @keyframes floatBounce{
  0%{transform: translateY(0);}
  50%{transform: translateY(-15px);}
@@ -318,7 +338,7 @@ img{ width:200px;height:200px;border-radius:50%; border:5px solid #003366; margi
  <section class="page" id="page5">
   <h1>🌟 Memory</h1>
   <div class="memory-flex">
-   <div class="memory-item"><img src="family.jpg"><p>"In the quiet warmth of home, we learn that love needs no grand stage and only hearts willing to stay</p></div>
+   <div class="memory-item"><img src="family.jpg"><p>Caption 1</p></div>
    <div class="memory-item"><img src="siblings.jpg"><p>Caption 2</p></div>
    <div class="memory-item"><img src="anugerahkoko.jpg"><p>Caption 3</p></div>
    <div class="memory-item"><img src="skpm.jpg"><p>Caption 4</p></div>
@@ -389,4 +409,3 @@ document.addEventListener('pointerdown',function initAudio(){ if(audioCtx.state=
 </script>
 </body>
 </html>
-
