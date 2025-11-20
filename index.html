@@ -66,6 +66,13 @@ body{
 .active-page{display:block}
 @keyframes fadeSlide{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
+/* headings bold + italic + center */
+.page h1{
+ font-weight:bold;
+ font-style:italic;
+ text-align:center;
+}
+
 /* buttons */
 button{
  background:#003366;color:white;border:none;padding:10px 30px;border-radius:25px;cursor:pointer;margin:10px;transition:.3s;
@@ -73,7 +80,7 @@ button{
 button:hover{background:#f2c94c;color:#003366;transform:scale(1.05)}
 
 /* global images */
-img{ width:200px;height:200px;border-radius:50%;border:5px solid #003366; margin-bottom:15px;object-fit:cover; }
+img{ width:200px;height:200px;border-radius:50%; border:5px solid #003366; margin-bottom:15px;object-fit:cover; }
 
 /* Hobby centered */
 #page2 .song-box{ margin-left:auto;margin-right:auto;display:block;text-align:center; }
@@ -108,7 +115,7 @@ img{ width:200px;height:200px;border-radius:50%;border:5px solid #003366; margin
 .memory-item{flex:none;text-align:center}
 .memory-item img{width:180px;height:180px;border-radius:15px;object-fit:cover;border:3px solid #003366;box-shadow:0 5px 15px rgba(0,0,0,0.2);margin-bottom:8px}
 
-/* Contact - UPDATED to vertical */
+/* Contact - vertical */
 .contact-icons{
  display:flex;
  flex-direction:column;
