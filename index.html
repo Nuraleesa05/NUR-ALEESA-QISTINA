@@ -1,4 +1,4 @@
-<!DOCTYPE html>  
+<!DOCTYPE html>   
 <html lang="en">
 <head>
 <meta charset="utf-8" />
@@ -105,22 +105,33 @@ img{ width:200px;height:200px;border-radius:50%; border:5px solid #003366; margi
 .exp-item{flex:none;text-align:center}
 .exp-item img{width:100%;max-width:300px;border-radius:15px;border:3px solid #003366;margin-bottom:10px;object-fit:cover}
 
-/* Memory stacked vertically - UPDATED SIZE */
+/* ---------- Memory: left/right image + caption beside ---------- */
 #page5 .memory-flex{
  display:flex;
  flex-direction:column;
- align-items:center;
- gap:25px;
+ gap:20px;
 }
-.memory-item{flex:none;text-align:center}
-#page5 .memory-item img{
+.memory-item{
+ display:flex;
+ align-items:center;
+ gap:20px;
+ flex-direction:row; /* default left image */
+}
+.memory-item:nth-child(even){
+ flex-direction:row-reverse; /* alternate image right */
+}
+.memory-item img{
  width:220px;
  height:220px;
  border-radius:15px;
  object-fit:cover;
  border:3px solid #003366;
  box-shadow:0 5px 15px rgba(0,0,0,0.2);
- margin-bottom:8px;
+ margin-bottom:0; /* remove bottom margin */
+}
+.memory-item p{
+ margin:0;
+ font-size:1.1rem;
 }
 
 /* Contact - vertical with larger animated icons */
@@ -132,9 +143,9 @@ img{ width:200px;height:200px;border-radius:50%; border:5px solid #003366; margi
  margin:20px 0;
 }
 .contact-icons a img{
- width:100px;  /* diperbesar */
- height:100px; /* diperbesar */
- border-radius:50%; /* border dibuang */
+ width:100px;
+ height:100px;
+ border-radius:50%;
  transition: all 0.3s ease;
  animation: floatBounce 2s infinite alternate;
 }
