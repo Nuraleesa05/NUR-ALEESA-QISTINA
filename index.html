@@ -7,6 +7,8 @@
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Math:ital@1&display=swap" rel="stylesheet">
+<!-- Dark Text Bubbles Font -->
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
 <style>
 /* ---------- base ---------- */
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
@@ -58,8 +60,6 @@ body{
  background-image: radial-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
  background-size: 15px 15px;
 }
-
-/* subtle animated light texture overlay */
 .container::after{
  content:"";
  position:absolute;
@@ -68,8 +68,6 @@ body{
  border-radius:25px;
  pointer-events:none;
 }
-
-/* neon yellow shadow animation */
 @keyframes neonYellow{
  0%{ box-shadow: 0 0 6px rgba(255,215,0,0.45), 0 0 12px rgba(255,215,0,0.35), 0 0 22px rgba(255,215,0,0.20); }
  50%{ box-shadow: 0 0 12px rgba(255,215,0,0.9), 0 0 28px rgba(255,215,0,0.65), 0 0 48px rgba(255,215,0,0.4); }
@@ -81,11 +79,15 @@ body{
 .active-page{display:block}
 @keyframes fadeSlide{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
-/* headings bold + italic + center */
+/* ---------- HEADINGS UPDATED: UPPERCASE + Dark Text Bubbles font + bigger ---------- */
 .page h1{
  font-weight:bold;
  font-style:italic;
  text-align:center;
+ text-transform:uppercase;
+ font-family: 'DM Serif Display', cursive;
+ font-size:3rem;
+ color:#222;
 }
 
 /* ---------- Caption font style ---------- */
