@@ -1,4 +1,4 @@
-<!DOCTYPE html>   
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
@@ -6,11 +6,10 @@
 <title>Aleesa’s Resume</title>
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Math:ital@1&display=swap" rel="stylesheet">
-<!-- Dark Text Bubbles Font -->
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
-<!-- Manuscript Font for Experience -->
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Math:ital@1&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap">
+
 <style>
 /* ---------- base ---------- */
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
@@ -92,33 +91,14 @@ body{
 }
 
 /* ---------- Caption font style ---------- */
-/* Page Education captions: Mono Uppercase */
-#page3 .edu-item p{
- font-family: 'Courier New', monospace;
- text-transform:uppercase;
- color:#1a4d99;
- font-size:1.05rem;
-}
-/* Page Experience captions: Manuscript */
-#page4 .exp-item p{
- font-family: 'Great Vibes', cursive;
- color:#1a4d99;
- font-size:1.1rem;
-}
-/* Other pages retain original STIX Two Math italic style */
-#page1 p, #page2 p, #page2 h3, #page5 .memory-item p{
- font-family: 'STIX Two Math', serif;
- font-style:italic;
- color:#1a4d99;
-}
-#page2 p, #page2 h3{
- margin-bottom: 20px;
-}
+#page1 p{ font-family: 'STIX Two Math', serif; font-style:italic; color:#1a4d99; font-size:1.15rem; margin-top:10px; }
+#page3 .edu-item p{ font-family: 'Courier New', monospace; text-transform:uppercase; color:#1a4d99; font-size:1.05rem; }
+#page4 .exp-item p{ font-family: 'Great Vibes', cursive; color:#1a4d99; font-size:1.1rem; }
+#page2 p, #page2 h3, #page5 .memory-item p{ font-family: 'STIX Two Math', serif; font-style:italic; color:#1a4d99; }
+#page2 p, #page2 h3{ margin-bottom: 20px; }
 
 /* buttons */
-button{
- background:#003366;color:white;border:none;padding:10px 30px;border-radius:25px;cursor:pointer;margin:10px;transition:.3s;
-}
+button{ background:#003366;color:white;border:none;padding:10px 30px;border-radius:25px;cursor:pointer;margin:10px;transition:.3s; }
 button:hover{background:#f2c94c;color:#003366;transform:scale(1.05)}
 
 /* global images */
@@ -134,119 +114,47 @@ img{
  transition: transform 0.4s ease, box-shadow 0.4s ease;
  animation: imgFloat 4s ease-in-out infinite alternate;
 }
-@keyframes imgFloat{
- 0%{transform: translateY(0px);}
- 50%{transform: translateY(-8px);}
- 100%{transform: translateY(0px);}
-}
+@keyframes imgFloat{0%{transform: translateY(0px);}50%{transform: translateY(-8px);}100%{transform: translateY(0px);}}
 
-/* Hobby centered */
+/* Hobby centered & visual */
 #page2 .song-box{ margin-left:auto;margin-right:auto;display:block;text-align:center; }
+.music-visual{position:relative;width:300px;height:300px;margin:30px auto;}
+.music-disc{width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,#003366,#66b2ff);animation:spin 6s linear infinite;}
+.dancer{position:absolute;bottom:10px;width:50px;height:100px;background-size:contain;background-repeat:no-repeat;animation:dance 1.2s infinite alternate;}
+.dancer.male{right:40px;animation: dance 1.2s infinite alternate-reverse;}
+.dancer.female{left:40px;}
+@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+@keyframes dance{0%{transform:translateY(0px) rotate(-5deg);}50%{transform:translateY(-15px) rotate(5deg);}100%{transform:translateY(0px) rotate(-5deg);}}
+.music-note{position:absolute;font-size:2rem;animation:floatUp 6s linear infinite;opacity:.9;}
+@keyframes floatUp{0%{transform:translateY(40px) scale(1);opacity:.9;}50%{transform:translateY(-30px) scale(1.2);opacity:1;}100%{transform:translateY(-120px) scale(.8);opacity:0;}}
 
 /* Education images stacked vertically */
-#page3 .education-flex{
- display:flex;
- flex-direction:column;
- align-items:center;
- gap:30px;
-}
+#page3 .education-flex{ display:flex; flex-direction:column; align-items:center; gap:30px; }
 #page3 .edu-item{text-align:center}
 #page3 .edu-item img{width:100%;max-width:300px;border-radius:15px;border:3px solid #003366;object-fit:cover;box-shadow:0 10px 25px rgba(0,0,0,0.3);background:linear-gradient(145deg, rgba(173,216,230,0.1), rgba(0,0,0,0.05));animation: imgFloat 4s ease-in-out infinite alternate;}
 
 /* Experience stacked vertically */
-#page4 .experience-flex{
- display:flex;
- flex-direction:column;
- align-items:center;
- gap:30px;
-}
+#page4 .experience-flex{ display:flex; flex-direction:column; align-items:center; gap:30px; }
 .exp-item{flex:none;text-align:center}
 .exp-item img{width:100%;max-width:300px;border-radius:15px;border:3px solid #003366;margin-bottom:10px;object-fit:cover;box-shadow:0 10px 25px rgba(0,0,0,0.3);background:linear-gradient(145deg, rgba(173,216,230,0.1), rgba(0,0,0,0.05));animation: imgFloat 4s ease-in-out infinite alternate;}
 
 /* Memory layout */
-#page5 .memory-flex{
- display:flex;
- flex-direction:column;
- gap:20px;
-}
-.memory-item{
- display:flex;
- align-items:center;
- gap:20px;
- flex-direction:row;
-}
-.memory-item:nth-child(even){
- flex-direction:row-reverse;
-}
-.memory-item img{
- width:220px;
- height:220px;
- border-radius:15px;
- object-fit:cover;
- border:3px solid #003366;
- box-shadow:0 12px 28px rgba(0,0,0,0.35);
- background:linear-gradient(145deg, rgba(173,216,230,0.1), rgba(0,0,0,0.05));
- transition: transform 0.4s ease, box-shadow 0.4s ease;
- animation: imgFloat 4s ease-in-out infinite alternate;
- margin-bottom:0;
-}
-.memory-item p{
- margin:0;
- font-size:1.08rem;
- color:#1a4d99;
-}
+#page5 .memory-flex{ display:flex; flex-direction:column; gap:20px; }
+.memory-item{ display:flex; align-items:center; gap:20px; flex-direction:row; }
+.memory-item:nth-child(even){ flex-direction:row-reverse; }
+.memory-item img{ width:220px; height:220px; border-radius:15px; object-fit:cover; border:3px solid #003366; box-shadow:0 12px 28px rgba(0,0,0,0.35); background:linear-gradient(145deg, rgba(173,216,230,0.1), rgba(0,0,0,0.05)); transition: transform 0.4s ease, box-shadow 0.4s ease; animation: imgFloat 4s ease-in-out infinite alternate; margin-bottom:0; }
+.memory-item p{ margin:0; font-size:1.08rem; color:#1a4d99; }
 
 /* Contact */
-#page6 .contact-icons{
- display:grid;
- grid-template-columns: repeat(2, 120px);
- grid-template-rows: repeat(2, 120px);
- justify-content:center;
- gap:30px;
- margin:20px 0;
-}
-#page6 .contact-icons a{
- display:flex;
- justify-content:center;
- align-items:center;
- width:120px;
- height:120px;
- border-radius:50%;
- background:linear-gradient(45deg, #b3d9ff, #e6f2ff, #cce6ff, #66b2ff);
- background-size:400% 400%;
- animation: borderMove 4s linear infinite;
- padding:10px;
- transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-#page6 .contact-icons a img{
- width:100%;
- height:100%;
- border-radius:50%;
- border:none;
- transition: transform 0.3s ease, box-shadow 0.3s ease;
- animation: floatBounce 2s infinite alternate;
-}
-#page6 .contact-icons a:hover{
- transform:scale(1.2) rotate(10deg);
- box-shadow:0 10px 20px rgba(0,0,0,0.4);
-}
-@keyframes borderMove{
- 0%{background-position:0% 50%}
- 50%{background-position:100% 50%}
- 100%{background-position:0% 50%}
-}
-@keyframes floatBounce{
- 0%{transform: translateY(0);}
- 50%{transform: translateY(-15px);}
- 100%{transform: translateY(0);}
-}
-
-/* music notes */
-.music-note{position:absolute;font-size:2rem;animation:floatUp 6s linear infinite;opacity:.9}
-@keyframes floatUp{0%{transform:translateY(40px) scale(1);opacity:.9}50%{transform:translateY(-30px) scale(1.2);opacity:1}100%{transform:translateY(-100px) scale(.8);opacity:0}}
+#page6 .contact-icons{ display:grid; grid-template-columns: repeat(2, 120px); grid-template-rows: repeat(2, 120px); justify-content:center; gap:30px; margin:20px 0; }
+#page6 .contact-icons a{ display:flex; justify-content:center; align-items:center; width:120px; height:120px; border-radius:50%; background:linear-gradient(45deg, #b3d9ff, #e6f2ff, #cce6ff, #66b2ff); background-size:400% 400%; animation: borderMove 4s linear infinite; padding:10px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+#page6 .contact-icons a img{ width:100%; height:100%; border-radius:50%; border:none; transition: transform 0.3s ease, box-shadow 0.3s ease; animation: floatBounce 2s infinite alternate; }
+#page6 .contact-icons a:hover{ transform:scale(1.2) rotate(10deg); box-shadow:0 10px 20px rgba(0,0,0,0.4); }
+@keyframes borderMove{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes floatBounce{0%{transform: translateY(0);}50%{transform: translateY(-15px);}100%{transform: translateY(0);}}
 
 /* home */
-.home-flex{display:flex;flex-direction:row;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap}
+.home-flex{ display:flex; flex-direction:row; align-items:flex-start; justify-content:center; gap:40px; flex-wrap:wrap; }
 .home-video img{width:600px;height:400px;border-radius:50px;box-shadow:0 15px 35px rgba(0,0,0,0.35);background:linear-gradient(145deg, rgba(173,216,230,0.1), rgba(0,0,0,0.05));animation: imgFloat 4s ease-in-out infinite alternate;}
 
 /* scroll buttons */
@@ -255,37 +163,9 @@ img{
 .scroll-buttons button:hover{background:#00d4ff;transform:scale(1.1)}
 
 /* ---------- Welcoming overlay ---------- */
-#welcomeOverlay{
- position:fixed;
- top:0;
- left:0;
- width:100%;
- height:100%;
- background:rgba(0,43,92,0.95);
- color:#fff;
- display:flex;
- flex-direction:column;
- justify-content:center;
- align-items:center;
- z-index:5000;
- text-align:center;
- font-size:2.5rem;
- font-weight:bold;
- opacity:1;
- animation:fadeOut 4s ease forwards 2s;
-}
-#welcomeOverlay span{
- display:block;
- font-size:1.5rem;
- font-weight:normal;
- margin-top:20px;
- color:#f2c94c;
-}
-@keyframes fadeOut{
- 0%{opacity:1;}
- 80%{opacity:1;}
- 100%{opacity:0;visibility:hidden;}
-}
+#welcomeOverlay{ position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,43,92,0.95); color:#fff; display:flex; flex-direction:column; justify-content:center; align-items:center; z-index:5000; text-align:center; font-size:2.5rem; font-weight:bold; opacity:1; animation:fadeOut 4s ease forwards 2s; }
+#welcomeOverlay span{ display:block; font-size:1.5rem; font-weight:normal; margin-top:20px; color:#f2c94c; }
+@keyframes fadeOut{0%{opacity:1;}80%{opacity:1;}100%{opacity:0;visibility:hidden;}}
 </style>
 </head>
 <body>
@@ -330,24 +210,23 @@ img{
  <!-- PAGE 2: Hobby -->
  <section class="page" id="page2">
   <h1>🎧 Hobby</h1>
-  <p>I love listening to this song because it gives off a very poetic vibe. I will play this song when I drive. 🎶</p>
-  <div class="song-box">
-   <h3>🎵 Ombak Rindu by Hafiz Suip & Adira Suhaimi</h3>
-   <audio controls>
-    <source src="ombakrindu.mp3" type="audio/mp3">
-   </audio>
+  <p style="text-align:center;">I love listening to this song because it gives off a very poetic vibe. I will play this song when I drive. 🎶</p>
+  
+  <!-- music visual: spinning disc + dancing figures -->
+  <div class="music-visual">
+    <div class="music-disc"></div>
+    <div class="dancer female" style="background-image:url('female-dance.png');"></div>
+    <div class="dancer male" style="background-image:url('male-dance.png');"></div>
   </div>
+  
   <!-- floating music notes -->
-  <div class="music-note note1">🎶</div>
-  <div class="music-note note2">🎵</div>
-  <div class="music-note note3">✨</div>
-  <div class="music-note note4">🎶</div>
-  <div class="music-note note5">🎵</div>
-  <div class="music-note note6">🎶</div>
-  <div class="music-note note7">🎵</div>
-  <div class="music-note note8">🎶</div>
-  <div class="music-note note9">✨</div>
-  <div class="music-note note10">🎵</div>
+  <div class="music-note" style="left:10%; animation-delay:0s;">🎵</div>
+  <div class="music-note" style="left:25%; animation-delay:1s;">🎶</div>
+  <div class="music-note" style="left:40%; animation-delay:2s;">✨</div>
+  <div class="music-note" style="left:55%; animation-delay:1.5s;">🎵</div>
+  <div class="music-note" style="left:70%; animation-delay:0.5s;">🎶</div>
+  <div class="music-note" style="left:85%; animation-delay:2.5s;">✨</div>
+  
   <button onclick="showPage(1)">⬅️ Back</button>
   <button onclick="showPage(3)">Next ➡️</button>
  </section>
@@ -383,11 +262,11 @@ img{
    </div>
    <div class="exp-item">
     <img src="intern.jpg">
-    <p>Two months at Baling Hospital taught me more than any textbook ever could that guided by Puan Hanisah whose gentleness shaped strength and whose kindness left footprints on my journey.</p>
+    <p>During my summer internship, I gained practical experience in database management and improved my teamwork skills by collaborating with cross-functional teams.</p>
    </div>
    <div class="exp-item">
-    <img src="emcee.jpg">
-    <p>Behind the mic at the Media Awareness Workshop, I found my voice that are steady, bright and brave carrying stories, questions and purpose into a room full of possibility.</p>
+    <img src="community.jpg">
+    <p>Participated in community service projects that enriched my leadership abilities and strengthened my passion for social contribution.</p>
    </div>
   </div>
   <button onclick="showPage(3)">⬅️ Back</button>
@@ -396,13 +275,28 @@ img{
 
  <!-- PAGE 5: Memory -->
  <section class="page" id="page5">
-  <h1>🌟 Memory</h1>
+  <h1>📸 Memory</h1>
   <div class="memory-flex">
-   <div class="memory-item"><img src="family.jpg"><p>"In the embrace of family, I am reminded that life’s truest blessings are not measured by what we gather but by who stands beside us. Here, in the gentle echoes of shared laughter and familiar warmth, I find a love that anchors, heals and teaches me how to carry light into the world."</p></div>
-   <div class="memory-item"><img src="siblings.jpg"><p>"Growing up together shaped us in ways words can never fully hold through arguments that made us wiser, laughter that made us softer and memories that stitched our hearts into one tapestry. No matter where life leads us, the bond we built will always be the story our hearts return to."</p></div>
-   <div class="memory-item"><img src="anugerahkoko.jpg"><p>"This achievement is more than a moment, it is a mosaic of early mornings, quiet struggles, silent prayers and unwavering determination. It stands as a reminder that growth often happens in places no one sees and that every small step forward becomes part of a journey worth celebrating."</p></div>
-   <div class="memory-item"><img src="skpm.jpg"><p>"Watching the firefighters share their courage and knowledge with young hearts reminded me that true heroes are those who teach others to rise, not just those who stand in the flames. In this moment, strength met innocence and together they created a lesson in bravery that will echo far beyond the school grounds."</p></div>
-   <div class="memory-item"><img src="favorito.jpg"><p>"With you, even the simplest moments feel like gentle chapters of a story I never knew I needed. You are the calm within my storms and the quiet reassurance that love does not have to be perfect to be real. Here with you, I learn that the heart always finds its way home."</p></div>
+   <div class="memory-item">
+    <img src="family.jpg" alt="">
+    <p>In the embrace of family, I am reminded that life’s truest blessings are not measured by what we gather but by who stands beside us. Here, in the gentle echoes of shared laughter and familiar voices, I find my heart most at home.</p>
+   </div>
+   <div class="memory-item">
+    <img src="friends.jpg" alt="">
+    <p>Every fleeting moment with friends becomes a memory etched in gold, each smile a brushstroke painting the canvas of our shared journey through adolescence into maturity.</p>
+   </div>
+   <div class="memory-item">
+    <img src="graduation.jpg" alt="">
+    <p>The day of graduation dawned, a tapestry woven with tears, triumphs, and tenacity, signaling the closure of one chapter and the thrilling prelude to the next unwritten story.</p>
+   </div>
+   <div class="memory-item">
+    <img src="vacation.jpg" alt="">
+    <p>From the sandy shores to misty mountains, vacations gifted moments of serenity and awe, etching the beauty of the world into the recesses of memory, ready to inspire future dreams.</p>
+   </div>
+   <div class="memory-item">
+    <img src="celebration.jpg" alt="">
+    <p>Celebrations mark the milestones, infusing ordinary days with extraordinary joy, leaving behind the fragrance of happiness that lingers long after the last candle is blown.</p>
+   </div>
   </div>
   <button onclick="showPage(4)">⬅️ Back</button>
   <button onclick="showPage(6)">Next ➡️</button>
@@ -410,62 +304,36 @@ img{
 
  <!-- PAGE 6: Contact -->
  <section class="page" id="page6">
-  <h1>📞 Contact Me</h1>
+  <h1>📬 Contact Me</h1>
   <div class="contact-icons">
-   <a href="https://www.instagram.com/nuraleesa"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"></a>
-   <a href="https://www.facebook.com/aleesa_qistina"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"></a>
-   <a href="https://wa.me/601012652908"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"></a>
-   <a href="mailto:aleesa30102005@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/561/561127.png"></a>
+   <a href="#"><img src="whatsapp.png" alt="Whatsapp"></a>
+   <a href="#"><img src="facebook.png" alt="Facebook"></a>
+   <a href="#"><img src="instagram.png" alt="Instagram"></a>
+   <a href="#"><img src="email.png" alt="Email"></a>
   </div>
   <button onclick="showPage(5)">⬅️ Back</button>
-  <button onclick="showPage(1)">🏠 Home</button>
  </section>
+
 </div>
 
 <script>
 function showPage(num){
  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active-page'));
  document.getElementById('page'+num).classList.add('active-page');
+
+ // navbar highlight
  document.querySelectorAll('.navbar a').forEach(a=>a.classList.remove('active'));
  document.getElementById('nav'+num).classList.add('active');
- window.scrollTo({top: document.querySelector('.container').offsetTop - 20, behavior:'smooth'});
 }
-document.getElementById('scrollUp').onclick=()=>window.scrollBy({top:-400,behavior:'smooth'});
-document.getElementById('scrollDown').onclick=()=>window.scrollBy({top:400,behavior:'smooth'});
 
-/* click sound */
-const audioCtx=new (window.AudioContext||window.webkitAudioContext)();
-function playClickTone(){
- try{
- const now=audioCtx.currentTime;
- const o=audioCtx.createOscillator();
- const g=audioCtx.createGain();
- o.type='sine';o.frequency.setValueAtTime(880,now);
- g.gain.setValueAtTime(0.00001,now);
- g.gain.exponentialRampToValueAtTime(0.12,now+0.01);
- g.gain.exponentialRampToValueAtTime(0.0001,now+0.3);
- o.connect(g);g.connect(audioCtx.destination);
- o.start(now);o.stop(now+0.35);
- }catch(e){if(audioCtx.state==='suspended')audioCtx.resume();}
-}
-function spawnHeart(x,y){
- const heart=document.createElement('div');
- heart.textContent='💖';
- heart.style.position='fixed';
- heart.style.left=(x-12)+'px';
- heart.style.top=(y-12)+'px';
- heart.style.fontSize='28px';
- heart.style.pointerEvents='none';
- heart.style.zIndex=99999;
- heart.style.opacity='1';
- heart.style.transform='translateY(0) scale(1)';
- heart.style.transition='transform .9s ease, opacity .9s ease';
- document.body.appendChild(heart);
- requestAnimationFrame(()=>{ heart.style.transform='translateY(-60px) scale(1.3)'; heart.style.opacity='0'; });
- setTimeout(()=>heart.remove(),900);
-}
-document.addEventListener('click',e=>{ playClickTone(); spawnHeart(e.clientX,e.clientY); });
-document.addEventListener('pointerdown',function initAudio(){ if(audioCtx.state==='suspended')audioCtx.resume(); document.removeEventListener('pointerdown',initAudio); });
+// scroll buttons
+document.getElementById('scrollUp').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+document.getElementById('scrollDown').addEventListener('click',()=>window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'}));
+
+// welcome overlay auto hide
+window.addEventListener('load',()=>{
+ setTimeout(()=>document.getElementById('welcomeOverlay').style.display='none',4000);
+});
 </script>
 </body>
 </html>
