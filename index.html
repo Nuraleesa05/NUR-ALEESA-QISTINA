@@ -12,10 +12,7 @@
 <!-- Manuscript Font for Experience -->
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
-/* ---------- base ---------- */
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-
-/* ---------- NEW: blue gradient background + slow animation ---------- */
 body{
  background: linear-gradient(135deg,#b3d9ff 0%,#e6f2ff 45%,#cce6ff 100%);
  background-size:400% 400%;
@@ -25,338 +22,75 @@ body{
  -webkit-font-smoothing:antialiased;
  -moz-osx-font-smoothing:grayscale;
 }
-
-/* ---------- NAV ---------- */
 .navbar{
- position:fixed;
- top:0;
- width:100%;
- background:rgba(255,255,255,0.90);
- padding:12px 0;
- text-align:center;
- box-shadow:0 4px 10px rgba(0,0,0,0.12);
- backdrop-filter:blur(5px);
- z-index:1200;
+ position:fixed;top:0;width:100%;background:rgba(255,255,255,0.90);padding:12px 0;text-align:center;
+ box-shadow:0 4px 10px rgba(0,0,0,0.12);backdrop-filter:blur(5px);z-index:1200;
 }
-.navbar a{
- margin:0 15px;color:#003366;font-weight:600;text-decoration:none;padding:8px 16px;border-radius:20px;transition:.25s;
-}
-.navbar a:hover,.navbar a.active{background:#003366;color:#fff;}
-
-/* ---------- container with crumpled paper + blueish effect ---------- */
+.navbar a{margin:0 15px;color:#003366;font-weight:600;text-decoration:none;padding:8px 16px;border-radius:20px;transition:.25s}
+.navbar a:hover,.navbar a.active{background:#003366;color:#fff}
 .container{
- max-width:1000px;
- padding:50px;
- margin:80px auto;
- border-radius:25px;
- background: #fdfdfd;
- z-index:1;
- position:relative;
- box-shadow: 0 0 8px rgba(0,123,255,0.25), 0 0 16px rgba(0,123,255,0.15), 0 0 28px rgba(0,123,255,0.1);
+ max-width:1000px;padding:50px;margin:80px auto;border-radius:25px;background:#fdfdfd;z-index:1;position:relative;
+ box-shadow:0 0 8px rgba(0,123,255,0.25),0 0 16px rgba(0,123,255,0.15),0 0 28px rgba(0,123,255,0.1);
  background-image:
-   linear-gradient(135deg, rgba(173,216,230,0.05) 25%, transparent 25%),
-   linear-gradient(225deg, rgba(173,216,230,0.05) 25%, transparent 25%),
-   linear-gradient(45deg, rgba(173,216,230,0.05) 25%, transparent 25%),
-   linear-gradient(315deg, rgba(173,216,230,0.05) 25%, transparent 25%);
- background-size: 20px 20px;
- background-blend-mode: overlay;
+ linear-gradient(135deg, rgba(173,216,230,0.05) 25%, transparent 25%),
+ linear-gradient(225deg, rgba(173,216,230,0.05) 25%, transparent 25%),
+ linear-gradient(45deg, rgba(173,216,230,0.05) 25%, transparent 25%),
+ linear-gradient(315deg, rgba(173,216,230,0.05) 25%, transparent 25%);
+ background-size: 20px 20px;background-blend-mode: overlay;
 }
 .container::after{
- content:"";
- position:absolute;
- top:0;left:0;width:100%;height:100%;
+ content:"";position:absolute;top:0;left:0;width:100%;height:100%;
  background:repeating-radial-gradient(circle at 50% 50%, rgba(0,0,0,0.01) 0, rgba(0,0,0,0.01) 2px, transparent 2px, transparent 4px);
- border-radius:25px;
- pointer-events:none;
+ border-radius:25px;pointer-events:none;
 }
-@keyframes bgMove{
- 0%{background-position:0% 50%}
- 50%{background-position:100% 50%}
- 100%{background-position:0% 50%}
-}
-
-/* pages */
-.page{display:none;animation:fadeSlide .8s ease}
-.active-page{display:block}
+@keyframes bgMove{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.page{display:none;animation:fadeSlide .8s ease}.active-page{display:block}
 @keyframes fadeSlide{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-
-/* ---------- HEADINGS UPDATED: UPPERCASE + Dark Text Bubbles font + bigger ---------- */
-.page h1{
- font-weight:bold;
- font-style:italic;
- text-align:center;
- text-transform:uppercase;
- font-family: 'DM Serif Display', cursive;
- font-size:3rem;
- color:#222;
-}
-
-/* ---------- Caption font style ---------- */
-/* Page Home caption increased */
-#page1 p{
- font-family: 'STIX Two Math', serif;
- font-style:italic;
- color:#1a4d99;
- font-size:1.15rem; /* sedikit lebih besar */
- margin-top:10px;
- line-height:1.6; /* selaraskan row-by-row */
-}
-
-/* Adjust home main heading font and position */
-#page1 h1{
- font-size:2.6rem; /* dikecilkan sedikit */
- margin-top:0; /* naik sedikit ke atas */
- line-height:1.3; /* selaraskan row-by-row */
-}
-
-/* Page Education captions: Mono Uppercase */
-#page3 .edu-item p{
- font-family: 'Courier New', monospace;
- text-transform:uppercase;
- color:#1a4d99;
- font-size:1.05rem;
-}
-/* Page Experience captions: Manuscript */
-#page4 .exp-item p{
- font-family: 'Great Vibes', cursive;
- color:#1a4d99;
- font-size:1.1rem;
-}
-/* Other pages retain original STIX Two Math italic style */
-#page2 p, #page2 h3, #page5 .memory-item p{
- font-family: 'STIX Two Math', serif;
- font-style:italic;
- color:#1a4d99;
-}
-#page2 p, #page2 h3{
- margin-bottom: 20px;
- text-align: center; /* CENTERED */
-}
-
-/* buttons */
-button{
- background:#003366;color:white;border:none;padding:10px 30px;border-radius:25px;cursor:pointer;margin:10px;transition:.3s;
-}
+.page h1{font-weight:bold;font-style:italic;text-align:center;text-transform:uppercase;font-family: 'DM Serif Display', cursive;font-size:3rem;color:#222;}
+#page1 p{font-family: 'STIX Two Math', serif;font-style:italic;color:#1a4d99;font-size:1.15rem;margin-top:10px;line-height:1.6;}
+#page1 h1{font-size:2.6rem;margin-top:0;line-height:1.3;}
+#page3 .edu-item p{font-family: 'Courier New', monospace;text-transform:uppercase;color:#1a4d99;font-size:1.05rem;}
+#page4 .exp-item p{font-family: 'Great Vibes', cursive;color:#1a4d99;font-size:1.1rem;}
+#page2 p, #page2 h3, #page5 .memory-item p{font-family: 'STIX Two Math', serif;font-style:italic;color:#1a4d99;}
+#page2 p, #page2 h3{text-align:center;margin-bottom:20px;}
+button{background:#003366;color:white;border:none;padding:10px 30px;border-radius:25px;cursor:pointer;margin:10px;transition:.3s;}
 button:hover{background:#f2c94c;color:#003366;transform:scale(1.05)}
-
-/* global images */
-img{
- width:200px;
- height:200px;
- border-radius:50%;
- border:5px solid #003366;
- margin-bottom:15px;
- object-fit:cover;
- box-shadow: 0 10px 20px rgba(0,0,0,0.25);
- background: linear-gradient(145deg, rgba(173,216,230,0.1), rgba(0,0,0,0.05));
- transition: transform 0.4s ease, box-shadow 0.4s ease;
- animation: imgFloat 4s ease-in-out infinite alternate;
-}
-@keyframes imgFloat{
- 0%{transform: translateY(0px);}
- 50%{transform: translateY(-8px);}
- 100%{transform: translateY(0px);}
-}
-
-/* Hobby centered */
-#page2 .song-box{ 
- margin-left:auto;
- margin-right:auto;
- display:block;
- text-align:center; 
- position:relative;
- z-index:1;
-}
-
-/* Floating music notes random positions */
-#page2 .music-note{
- animation:floatRandom 6s linear infinite;
-}
-@keyframes floatRandom{
- 0%{
-   transform: translateY(-50px) translateX(0) rotate(0deg);
-   opacity:1;
- }
- 25%{
-   transform: translateY(50px) translateX(30px) rotate(45deg);
-   opacity:0.8;
- }
- 50%{
-   transform: translateY(150px) translateX(-20px) rotate(90deg);
-   opacity:0.6;
- }
- 75%{
-   transform: translateY(250px) translateX(15px) rotate(135deg);
-   opacity:0.8;
- }
- 100%{
-   transform: translateY(350px) translateX(0) rotate(180deg);
-   opacity:0;
- }
-}
-
-/* Education images stacked vertically */
-#page3 .education-flex{
- display:flex;
- flex-direction:column;
- align-items:center;
- gap:30px;
-}
-#page3 .edu-item{text-align:center}
-#page3 .edu-item img{width:100%;max-width:300px;border-radius:15px;border:3px solid #003366;object-fit:cover;box-shadow:0 10px 25px rgba(0,0,0,0.3);background:linear-gradient(145deg, rgba(173,216,230,0.1), rgba(0,0,0,0.05));animation: imgFloat 4s ease-in-out infinite alternate;}
-
-/* Experience stacked vertically */
-#page4 .experience-flex{
- display:flex;
- flex-direction:column;
- align-items:center;
- gap:30px;
-}
-.exp-item{flex:none;text-align:center}
-.exp-item img{width:100%;max-width:300px;border-radius:15px;border:3px solid #003366;margin-bottom:10px;object-fit:cover;box-shadow:0 10px 25px rgba(0,0,0,0.3);background:linear-gradient(145deg, rgba(173,216,230,0.1), rgba(0,0,0,0.05));animation: imgFloat 4s ease-in-out infinite alternate;}
-
-/* Memory layout */
-#page5 .memory-flex{
- display:flex;
- flex-direction:column;
- gap:20px;
-}
-.memory-item{
- display:flex;
- align-items:center;
- gap:20px;
- flex-direction:row;
-}
-.memory-item:nth-child(even){
- flex-direction:row-reverse;
-}
-.memory-item img{
- width:220px;
- height:220px;
- border-radius:15px;
- object-fit:cover;
- border:3px solid #003366;
- box-shadow:0 12px 28px rgba(0,0,0,0.35);
- background:linear-gradient(145deg, rgba(173,216,230,0.1), rgba(0,0,0,0.05));
- transition: transform 0.4s ease, box-shadow 0.4s ease;
- animation: imgFloat 4s ease-in-out infinite alternate;
- margin-bottom:0;
-}
-.memory-item p{
- margin:0;
- font-size:1.08rem;
- color:#1a4d99;
-}
-
-/* Contact */
-#page6 .contact-icons{
- display:grid;
- grid-template-columns: repeat(2, 120px);
- grid-template-rows: repeat(2, 120px);
- justify-content:center;
- gap:30px;
- margin:20px 0;
-}
-#page6 .contact-icons a{
- display:flex;
- justify-content:center;
- align-items:center;
- width:120px;
- height:120px;
- border-radius:50%;
- background:linear-gradient(45deg, #b3d9ff, #e6f2ff, #cce6ff, #66b2ff);
- background-size:400% 400%;
- animation: borderMove 4s linear infinite;
- padding:10px;
- transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-#page6 .contact-icons a img{
- width:100%;
- height:100%;
- border-radius:50%;
- border:none;
- transition: transform 0.3s ease, box-shadow 0.3s ease;
- animation: floatBounce 2s infinite alternate;
-}
-#page6 .contact-icons a:hover{
- transform:scale(1.2) rotate(10deg);
- box-shadow:0 10px 20px rgba(0,0,0,0.4);
-}
-@keyframes borderMove{
- 0%{background-position:0% 50%}
- 50%{background-position:100% 50%}
- 100%{background-position:0% 50%}
-}
-@keyframes floatBounce{
- 0%{transform: translateY(0);}
- 50%{transform: translateY(-15px);}
- 100%{transform: translateY(0);}
-}
-
-/* home */
-.home-flex{
- display:flex;
- flex-direction:row;
- align-items:flex-start; /* NAIKKAN SEDIKIT TULISAN */
- justify-content:center;
- gap:40px;
- flex-wrap:wrap;
-}
+img{width:200px;height:200px;border-radius:50%;border:5px solid #003366;margin-bottom:15px;object-fit:cover;box-shadow:0 10px 20px rgba(0,0,0,0.25);background: linear-gradient(145deg, rgba(173,216,230,0.1), rgba(0,0,0,0.05));transition: transform 0.4s ease, box-shadow 0.4s ease;animation: imgFloat 4s ease-in-out infinite alternate;}
+@keyframes imgFloat{0%{transform: translateY(0px);}50%{transform: translateY(-8px);}100%{transform: translateY(0px);}}
+#page2 .song-box{margin-left:auto;margin-right:auto;display:block;text-align:center;position:relative;z-index:1;}
+#page2 .music-note{position:absolute;font-size:28px;}
+#page3 .education-flex{display:flex;flex-direction:column;align-items:center;gap:30px;}
+#page3 .edu-item{text-align:center}#page3 .edu-item img{width:100%;max-width:300px;border-radius:15px;border:3px solid #003366;object-fit:cover;box-shadow:0 10px 25px rgba(0,0,0,0.3);background:linear-gradient(145deg, rgba(173,216,230,0.1), rgba(0,0,0,0.05));animation: imgFloat 4s ease-in-out infinite alternate;}
+#page4 .experience-flex{display:flex;flex-direction:column;align-items:center;gap:30px;}
+.exp-item{flex:none;text-align:center}.exp-item img{width:100%;max-width:300px;border-radius:15px;border:3px solid #003366;margin-bottom:10px;object-fit:cover;box-shadow:0 10px 25px rgba(0,0,0,0.3);background:linear-gradient(145deg, rgba(173,216,230,0.1), rgba(0,0,0,0.05));animation: imgFloat 4s ease-in-out infinite alternate;}
+#page5 .memory-flex{display:flex;flex-direction:column;gap:20px;}
+.memory-item{display:flex;align-items:center;gap:20px;flex-direction:row;}
+.memory-item:nth-child(even){flex-direction:row-reverse;}
+.memory-item img{width:220px;height:220px;border-radius:15px;object-fit:cover;border:3px solid #003366;box-shadow:0 12px 28px rgba(0,0,0,0.35);background:linear-gradient(145deg, rgba(173,216,230,0.1), rgba(0,0,0,0.05));transition: transform 0.4s ease, box-shadow 0.4s ease;animation: imgFloat 4s ease-in-out infinite alternate;margin-bottom:0;}
+.memory-item p{margin:0;font-size:1.08rem;color:#1a4d99;}
+#page6 .contact-icons{display:grid;grid-template-columns: repeat(2, 120px);grid-template-rows: repeat(2, 120px);justify-content:center;gap:30px;margin:20px 0;}
+#page6 .contact-icons a{display:flex;justify-content:center;align-items:center;width:120px;height:120px;border-radius:50%;background:linear-gradient(45deg, #b3d9ff, #e6f2ff, #cce6ff, #66b2ff);background-size:400% 400%;animation: borderMove 4s linear infinite;padding:10px;transition: transform 0.3s ease, box-shadow 0.3s ease;}
+#page6 .contact-icons a img{width:100%;height:100%;border-radius:50%;border:none;transition: transform 0.3s ease, box-shadow 0.3s ease;animation: floatBounce 2s infinite alternate;}
+#page6 .contact-icons a:hover{transform:scale(1.2) rotate(10deg);box-shadow:0 10px 20px rgba(0,0,0,0.4);}
+@keyframes borderMove{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes floatBounce{0%{transform: translateY(0);}50%{transform: translateY(-15px);}100%{transform: translateY(0);}}
+.home-flex{display:flex;flex-direction:row;align-items:flex-start;justify-content:center;gap:40px;flex-wrap:wrap;}
 .home-video img{width:600px;height:400px;border-radius:50px;box-shadow:0 15px 35px rgba(0,0,0,0.35);background:linear-gradient(145deg, rgba(173,216,230,0.1), rgba(0,0,0,0.05));animation: imgFloat 4s ease-in-out infinite alternate;}
-
-/* scroll buttons */
 .scroll-buttons{position:fixed;bottom:40px;right:40px;display:flex;flex-direction:column;gap:10px;z-index:1300}
 .scroll-buttons button{background:#6a00f4;color:#fff;border:none;padding:15px 18px;font-size:20px;border-radius:50%;cursor:pointer;box-shadow:0 8px 18px rgba(0,0,0,0.2);transition:.2s}
 .scroll-buttons button:hover{background:#00d4ff;transform:scale(1.1)}
-
-/* ---------- Welcoming overlay ---------- */
-#welcomeOverlay{
- position:fixed;
- top:0;
- left:0;
- width:100%;
- height:100%;
- background:rgba(0,43,92,0.95);
- color:#fff;
- display:flex;
- flex-direction:column;
- justify-content:center;
- align-items:center;
- z-index:5000;
- text-align:center;
- font-size:2.5rem;
- font-weight:bold;
- opacity:1;
- animation:fadeOut 4s ease forwards 2s;
-}
-#welcomeOverlay span{
- display:block;
- font-size:1.5rem;
- font-weight:normal;
- margin-top:20px;
- color:#f2c94c;
-}
-@keyframes fadeOut{
- 0%{opacity:1;}
- 80%{opacity:1;}
- 100%{opacity:0;visibility:hidden;}
-}
+#welcomeOverlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,43,92,0.95);color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;z-index:5000;text-align:center;font-size:2.5rem;font-weight:bold;opacity:1;animation:fadeOut 4s ease forwards 2s;}
+#welcomeOverlay span{display:block;font-size:1.5rem;font-weight:normal;margin-top:20px;color:#f2c94c;}
+@keyframes fadeOut{0%{opacity:1;}80%{opacity:1;}100%{opacity:0;visibility:hidden;}}
+@keyframes floatRandom{0%{transform: translateY(-50px) rotate(0deg); opacity:1;}50%{transform: translateY(150px) rotate(180deg); opacity:0.6;}100%{transform: translateY(350px) rotate(360deg); opacity:0;}}
 </style>
 </head>
 <body>
-<!-- Welcoming Overlay -->
-<div id="welcomeOverlay">
- <div>Welcome to My Portfolio! 👋</div>
- <span>Enjoy exploring my resume</span>
-</div>
-
-<!-- Scroll Buttons -->
+<div id="welcomeOverlay"><div>Welcome to My Portfolio! 👋</div><span>Enjoy exploring my resume</span></div>
 <div class="scroll-buttons">
  <button id="scrollUp">▲</button>
  <button id="scrollDown">▼</button>
 </div>
-
-<!-- NAVBAR -->
 <div class="navbar">
  <a href="#" onclick="showPage(1)" id="nav1" class="active">Home</a>
  <a href="#" onclick="showPage(2)" id="nav2">Hobby</a>
@@ -365,14 +99,11 @@ img{
  <a href="#" onclick="showPage(5)" id="nav5">Memory</a>
  <a href="#" onclick="showPage(6)" id="nav6">Contact</a>
 </div>
-
 <div class="container">
- <!-- PAGE 1: Home -->
+ <!-- PAGE 1 -->
  <section class="page active-page" id="page1">
   <div class="home-flex">
-   <div class="home-video">
-    <img src="homepagebaru.jpg" alt="Intro Image">
-   </div>
+   <div class="home-video"><img src="homepagebaru.jpg" alt="Intro Image"></div>
    <div class="home-text">
     <h1>Hello, I’m Nur Aleesa Qistina 👋</h1>
     <p><b>Student ID:</b> 2023875766</p>
@@ -393,36 +124,15 @@ img{
    </audio>
   </div>
   <!-- floating music notes -->
-  <div class="music-note note1">🎶</div>
-  <div class="music-note note2">🎵</div>
-  <div class="music-note note3">✨</div>
-  <div class="music-note note4">🎶</div>
-  <div class="music-note note5">🎵</div>
-  <div class="music-note note6">🎶</div>
-  <div class="music-note note7">🎵</div>
-  <div class="music-note note8">🎶</div>
-  <div class="music-note note9">✨</div>
-  <div class="music-note note10">🎵</div>
-  <button onclick="showPage(1)">⬅️ Back</button>
-  <button onclick="showPage(3)">Next ➡️</button>
  </section>
 
  <!-- PAGE 3: Education -->
  <section class="page" id="page3">
   <h1>🎓 Education</h1>
   <div class="education-flex">
-   <div class="edu-item">
-    <img src="skpmii.jpg" alt="SK Pagar Museh">
-    <p>SK Pagar Museh (2012–2017)</p>
-   </div>
-   <div class="edu-item">
-    <img src="smksgkarangan.jpg" alt="SMK Sungai Karangan">
-    <p>SMK Sungai Karangan (2018–2022)</p>
-   </div>
-   <div class="edu-item">
-    <img src="uitm.jpg" alt="UiTM Kedah">
-    <p>UiTM Kedah – Diploma in Information Management (2023–2026)</p>
-   </div>
+   <div class="edu-item"><img src="skpmii.jpg" alt="SK Pagar Museh"><p>SK Pagar Museh (2012–2017)</p></div>
+   <div class="edu-item"><img src="smksgkarangan.jpg" alt="SMK Sungai Karangan"><p>SMK Sungai Karangan (2018–2022)</p></div>
+   <div class="edu-item"><img src="uitm.jpg" alt="UiTM Kedah"><p>UiTM Kedah – Diploma in Information Management (2023–2026)</p></div>
   </div>
   <button onclick="showPage(2)">⬅️ Back</button>
   <button onclick="showPage(4)">Next ➡️</button>
@@ -432,18 +142,9 @@ img{
  <section class="page" id="page4">
   <h1>🌟 Experience</h1>
   <div class="experience-flex">
-   <div class="exp-item">
-    <img src="hiking.jpg">
-    <p>Up on Bukit H, we climbed through winding trails and whispered winds. Two sisters chasing horizons and collecting courage with every step and beauty with every breath.</p>
-   </div>
-   <div class="exp-item">
-    <img src="intern.jpg">
-    <p>Two months at Baling Hospital taught me more than any textbook ever could that guided by Puan Hanisah whose gentleness shaped strength and whose kindness left footprints on my journey.</p>
-   </div>
-   <div class="exp-item">
-    <img src="emcee.jpg">
-    <p>Behind the mic at the Media Awareness Workshop, I found my voice that are steady, bright and brave carrying stories, questions and purpose into a room full of possibility.</p>
-   </div>
+   <div class="exp-item"><img src="hiking.jpg"><p>Up on Bukit H, we climbed through winding trails and whispered winds. Two sisters chasing horizons and collecting courage with every step and beauty with every breath.</p></div>
+   <div class="exp-item"><img src="intern.jpg"><p>Two months at Baling Hospital taught me more than any textbook ever could that guided by Puan Hanisah whose gentleness shaped strength and whose kindness left footprints on my journey.</p></div>
+   <div class="exp-item"><img src="emcee.jpg"><p>Behind the mic at the Media Awareness Workshop, I found my voice that are steady, bright and brave carrying stories, questions and purpose into a room full of possibility.</p></div>
   </div>
   <button onclick="showPage(3)">⬅️ Back</button>
   <button onclick="showPage(5)">Next ➡️</button>
@@ -521,6 +222,26 @@ function spawnHeart(x,y){
 }
 document.addEventListener('click',e=>{ playClickTone(); spawnHeart(e.clientX,e.clientY); });
 document.addEventListener('pointerdown',function initAudio(){ if(audioCtx.state==='suspended')audioCtx.resume(); document.removeEventListener('pointerdown',initAudio); });
+
+/* Floating music notes random */
+function createMusicNotes(){
+ const page2=document.getElementById('page2');
+ const notes = ['🎵','🎶','♪','♬'];
+ for(let i=0;i<15;i++){
+   const note=document.createElement('div');
+   note.className='music-note';
+   note.textContent=notes[Math.floor(Math.random()*notes.length)];
+   note.style.left=Math.random()*90+'%';
+   note.style.top=(-50-Math.random()*200)+'px';
+   note.style.animation=`floatRandom ${3+Math.random()*3}s ease-in-out infinite`;
+   note.style.fontSize=(20+Math.random()*20)+'px';
+   page2.appendChild(note);
+ }
+}
+window.onload=function(){
+ setTimeout(()=>{document.getElementById('welcomeOverlay').style.display='none'},3500);
+ createMusicNotes();
+};
 </script>
 </body>
 </html>
