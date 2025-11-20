@@ -21,6 +21,7 @@ body{
  overflow-x:hidden;
  -webkit-font-smoothing:antialiased;
  -moz-osx-font-smoothing:grayscale;
+ position:relative;
 }
 .navbar{
  position:fixed;top:0;width:100%;background:rgba(255,255,255,0.90);padding:12px 0;text-align:center;
@@ -50,7 +51,6 @@ body{
 #page1 p{font-family: 'STIX Two Math', serif;font-style:italic;color:#1a4d99;font-size:1.15rem;margin-top:10px;line-height:1.6;}
 #page1 h1{font-size:2.6rem;margin-top:0;line-height:1.3;}
 #page3 .edu-item p{font-family: 'Courier New', monospace;text-transform:uppercase;color:#1a4d99;font-size:1.05rem;}
-/* PAGE 4: Experience caption updated to bold normal */
 #page4 .exp-item p{font-family: 'Poppins', sans-serif; font-weight:700; color:#1a4d99; font-size:1.1rem;}
 #page2 p, #page2 h3, #page5 .memory-item p{font-family: 'STIX Two Math', serif;font-style:italic;color:#1a4d99;}
 #page2 p, #page2 h3{text-align:center;margin-bottom:20px;}
@@ -127,6 +127,19 @@ button{margin-top:20px;}
 @keyframes floatRandom{0%{transform: translateY(-50px) rotate(0deg); opacity:1;}50%{transform: translateY(150px) rotate(180deg); opacity:0.6;}100%{transform: translateY(350px) rotate(360deg); opacity:0;}}
 @keyframes borderMove{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 @keyframes floatBounce{0%{transform: translateY(0);}50%{transform: translateY(-15px);}100%{transform: translateY(0);}}
+/* Heart animation */
+.heart {
+  position: absolute;
+  font-size: 24px;
+  animation: heartRise 1s ease-out forwards;
+  pointer-events: none;
+  z-index: 9999;
+}
+@keyframes heartRise {
+  0% {transform: translateY(0) scale(1); opacity:1;}
+  50% {transform: translateY(-50px) scale(1.3); opacity:0.8;}
+  100% {transform: translateY(-100px) scale(1.6); opacity:0;}
+}
 </style>
 </head>
 <body>
@@ -236,6 +249,20 @@ document.getElementById('scrollUp').addEventListener('click',()=>window.scrollBy
 document.getElementById('scrollDown').addEventListener('click',()=>window.scrollBy({top:300,behavior:'smooth'}));
 window.addEventListener('load',()=>{
  setTimeout(()=>document.getElementById('welcomeOverlay').style.display='none',4000);
+});
+
+// Click to show heart animation with sound
+const clickSound = new Audio('https://www.soundjay.com/button/beep-07.mp3'); // contoh bunyi
+document.body.addEventListener('click', function(e){
+  clickSound.currentTime = 0;
+  clickSound.play();
+  const heart = document.createElement('div');
+  heart.className = 'heart';
+  heart.textContent = '💖';
+  heart.style.left = e.pageX - 12 + 'px';
+  heart.style.top = e.pageY - 12 + 'px';
+  document.body.appendChild(heart);
+  setTimeout(()=>heart.remove(),1000);
 });
 </script>
 </body>
