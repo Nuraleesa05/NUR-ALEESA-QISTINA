@@ -9,6 +9,8 @@
 <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Math:ital@1&display=swap" rel="stylesheet">
 <!-- Dark Text Bubbles Font -->
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+<!-- Manuscript Font for Experience -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
 /* ---------- base ---------- */
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
@@ -91,21 +93,25 @@ body{
 }
 
 /* ---------- Caption font style ---------- */
-.page p, #page2 h3, #page4 .exp-item p, #page5 .memory-item p, #page3 .edu-item p{
+/* Page Education captions: Mono Uppercase */
+#page3 .edu-item p{
+ font-family: 'Courier New', monospace;
+ text-transform:uppercase;
+ color:#1a4d99;
+ font-size:1.05rem;
+}
+/* Page Experience captions: Manuscript */
+#page4 .exp-item p{
+ font-family: 'Great Vibes', cursive;
+ color:#1a4d99;
+ font-size:1.1rem;
+}
+/* Other pages retain original STIX Two Math italic style */
+#page1 p, #page2 p, #page2 h3, #page5 .memory-item p{
  font-family: 'STIX Two Math', serif;
  font-style:italic;
  color:#1a4d99;
 }
-
-/* selaraskan saiz font mengikut page */
-#page1 p{ font-size:1.15rem; }
-#page2 p{ font-size:1.1rem; }
-#page2 h3{ font-size:1.2rem; }
-#page3 .edu-item p{ font-size:1.05rem; }
-#page4 .exp-item p{ font-size:1.1rem; }
-#page5 .memory-item p{ font-size:1.08rem; }
-
-/* ---------- PAGE 2: Hobby row spacing ---------- */
 #page2 p, #page2 h3{
  margin-bottom: 20px;
 }
